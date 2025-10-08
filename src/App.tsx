@@ -1,11 +1,14 @@
 import { Home } from "./components/ui/home/home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./assets/styles/reset.css";
 
 function App() {
     return (
-        <>
-            <Home />
-        </>
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+            </Routes>
+        </Router>
     )
 }
 
