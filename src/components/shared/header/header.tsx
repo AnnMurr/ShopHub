@@ -5,6 +5,8 @@ import Typography from "@mui/material/Typography";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import Box from "@mui/material/Box";
+import { Link } from "react-router-dom";
+import IconButton from "@mui/material/IconButton";
 
 export const Header = () => {
     return (
@@ -17,23 +19,28 @@ export const Header = () => {
                     <Typography
                         variant="h6"
                         noWrap
-                        component="a"
-                        href="/"
+                        component={Link}
+                        to="/"
                         sx={{
                             mr: 2,
-                            display: { xs: 'none', md: 'flex' },
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
                             color: 'inherit',
-                            textDecoration: 'none',
                         }}
                     >
                         SHOPHUB
                     </Typography>
                     <Box sx={{ marginLeft: "auto", display: "flex", gap: 2 }}>
-                        <AccountCircleIcon />
                         <ShoppingBagIcon />
+                        <IconButton
+                            sx={{
+                                padding: "0",
+                                color: "black"
+                            }}
+                            component={Link} to="/login">
+                            <AccountCircleIcon />
+                        </IconButton>
                     </Box>
                 </Toolbar>
             </Container>
