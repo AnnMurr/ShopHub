@@ -11,7 +11,6 @@
 }
 
 .card__image-wrap {
-    flex: 1 1 auto;
     text-align: center;
 }
 
@@ -23,10 +22,12 @@
 
 .card__title h5 {
     font-size: 20px;
+    color: #000;
 }
 
 .card__price span {
     font-size: 14px;
+    color: #000;
 }
 
 .card__details {
@@ -34,4 +35,12 @@
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 1;
+    padding-top: 10px;
+}
+
+.card__link {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-bottom: 25px;
 }
