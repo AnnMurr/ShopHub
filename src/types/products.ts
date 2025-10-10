@@ -5,7 +5,7 @@ interface MetaType {
     qrCode: string,
 }
 
-interface ReviewType {
+export interface ReviewType {
     comment: string,
     date: string,
     rating: number,
