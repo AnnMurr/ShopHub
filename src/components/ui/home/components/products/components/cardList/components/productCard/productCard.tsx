@@ -2,6 +2,7 @@ import { ProductType } from "../../../../../../../../../types/products";
 import { Link } from "react-router-dom";
 import Rating from "@mui/material/Rating";
 import { ButtonComponent } from "../../../../../../../../reusable/button/button";
+import { formatPrice } from "../../../../../../../../../utils/formatPrice";
 import "./productCard.css";
 
 interface ProductCardProps {
@@ -22,7 +23,7 @@ export const ProductCard = ({ data }: ProductCardProps) => {
                     <div>
                         <Rating sx={{ color: "#000" }} size="small" name="read-only" value={data.rating} readOnly />
                         <div className="card__price">
-                            <span>{data.price}</span>
+                            <span>{formatPrice(data.price)}</span>
                         </div>
                     </div>
                 </div>

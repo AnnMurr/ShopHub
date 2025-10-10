@@ -10,7 +10,6 @@ import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
-import Button from "@mui/material/Button";
 import { ButtonComponent } from "../../reusable/button/button";
 
 export const Header = () => {
