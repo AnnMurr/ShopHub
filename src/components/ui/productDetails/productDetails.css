@@ -86,6 +86,10 @@
     font-size: 30px;
 }
 
+.product-details__button {
+    margin-top: 70px;
+}
+
 @media (max-width: 1024px) {
     .product-details__top-block {
         flex-direction: column;

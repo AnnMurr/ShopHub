@@ -1,6 +1,6 @@
-import Button from "@mui/material/Button";
 import Rating from "@mui/material/Rating";
 import { ProductType } from "../../../../../types/products";
+import { ButtonComponent } from "../../../../reusable/button/button";
 
 interface ProductStatsProps {
     data: ProductType,
@@ -31,17 +31,7 @@ export const ProductStats = ({ data }: ProductStatsProps) => {
                 <span>{data.reviews.length} reviews</span>
             </div>
             <div className="product-details__button">
-                <Button
-                    sx={{
-                        mt: "70px",
-                        backgroundColor: '#000',
-                        color: '#fff',
-                        '&:hover': {
-                            backgroundColor: '#333',
-                        },
-                    }} type="button" variant="contained" fullWidth disableElevation>
-                    Buy
-                </Button>
+                <ButtonComponent type="button" text="Buy" />
             </div>
         </div>
     )

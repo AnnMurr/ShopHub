@@ -11,6 +11,7 @@ import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Button from "@mui/material/Button";
+import { ButtonComponent } from "../../reusable/button/button";
 
 export const Header = () => {
     const userData = useSelector((state: RootState) => state.auth.user);
@@ -43,9 +44,7 @@ export const Header = () => {
                     <Box sx={{ marginLeft: "auto", display: "flex", gap: 2, alignItems: "center" }}>
                         <ShoppingBagOutlinedIcon />
                         {userData ?
-                            (<Button onClick={handleLogout} type="button" variant="contained" fullWidth disableElevation>
-                                Log out
-                            </Button>)
+                            (<ButtonComponent type="button" text="Log out" handleClick={handleLogout} />)
                             :
                             (<IconButton
                                 sx={{
