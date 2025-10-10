@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { IconButton, InputAdornment } from "@mui/material";
@@ -13,6 +12,7 @@ import { useLoginMutation } from "../../../../../services/authApi";
 import { setCredentials } from "../../../../../redux/authSlice";
 import { AppDispatch } from "../../../../../redux/store";
 import { UserType } from "../../../../../types/user";
+import { ButtonComponent } from "../../../../reusable/button/button";
 
 interface ErrorsType {
     email: string,
@@ -54,7 +54,7 @@ export const Form = () => {
         if (validateForm()) {
             try {
                 const data: UserType = await login(userData).unwrap();
-                dispatch(setCredentials({user: data, token: data.accessToken}));
+                dispatch(setCredentials({ user: data, token: data.accessToken }));
                 navigate("/");
             } catch (error) {
                 console.error(error)
@@ -113,9 +113,7 @@ export const Form = () => {
                         },
                     }}
                 />
-                <Button type="submit" variant="contained" fullWidth disableElevation>
-                    Log in
-                </Button>
+                <ButtonComponent type="submit" text="Log in" />
             </Box>
         </Paper>
     )

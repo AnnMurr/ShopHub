@@ -1,7 +1,7 @@
-import Button from "@mui/material/Button";
 import { ProductType } from "../../../../../../../../../types/products";
 import { Link } from "react-router-dom";
 import Rating from "@mui/material/Rating";
+import { ButtonComponent } from "../../../../../../../../reusable/button/button";
 import "./productCard.css";
 
 interface ProductCardProps {
@@ -28,16 +28,7 @@ export const ProductCard = ({ data }: ProductCardProps) => {
                 </div>
             </Link>
             <div>
-                <Button
-                    sx={{
-                        backgroundColor: '#000',
-                        color: '#fff',
-                        '&:hover': {
-                            backgroundColor: '#333',
-                        },
-                    }} type="button" variant="contained" fullWidth disableElevation>
-                    Buy
-                </Button>
+                <ButtonComponent type="button" text="Buy" />
             </div>
         </li >
     )
