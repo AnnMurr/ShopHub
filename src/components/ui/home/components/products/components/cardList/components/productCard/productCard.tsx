@@ -1,18 +1,23 @@
 import Button from "@mui/material/Button";
 import "./productCard.css";
+import { ProductType } from "../../../../../../../../../types/products";
 
-export const ProductCard = () => {
+interface ProductCardProps {
+    data: ProductType
+}
+
+export const ProductCard = ({ data }: ProductCardProps) => {
     return (
         <li className="card">
             <div className="card__image-wrap">
-                <img className="card__image" src="https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/1.webp" alt="laptop" />
+                <img className="card__image" src={data.images[0]} alt={data.title} />
             </div>
             <div className="card__details">
                 <div className="card__title">
-                    <h5>Title</h5>
+                    <h5>{data.title}</h5>
                 </div>
                 <div className="card__price">
-                    <span>price</span>
+                    <span>{data.price}</span>
                 </div>
                 <div>
                     <Button
