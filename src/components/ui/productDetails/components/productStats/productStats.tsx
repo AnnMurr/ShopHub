@@ -1,6 +1,7 @@
 import Rating from "@mui/material/Rating";
 import { ProductType } from "../../../../../types/products";
 import { ButtonComponent } from "../../../../reusable/button/button";
+import { formatPrice } from "../../../../../utils/formatPrice";
 
 interface ProductStatsProps {
     data: ProductType,
@@ -10,7 +11,7 @@ export const ProductStats = ({ data }: ProductStatsProps) => {
     return (
         <div className="product-details__stats">
             <div className="product-details__price">
-                <span>{data.price}</span>
+                <span>{formatPrice(data.price)}</span>
             </div>
             <div className="product-details__rating">
                 <div className="product-details__rating-text">
