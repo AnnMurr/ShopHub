@@ -30,17 +30,19 @@ export const ProductStats = ({ data }: ProductStatsProps) => {
             <div className="product-details__reviews-quantity">
                 <span>{data.reviews.length} reviews</span>
             </div>
-            <Button
-                sx={{
-                    mt: "70px",
-                    backgroundColor: '#000',
-                    color: '#fff',
-                    '&:hover': {
-                        backgroundColor: '#333',
-                    },
-                }} type="button" variant="contained" fullWidth disableElevation>
-                Buy
-            </Button>
+            <div className="product-details__button">
+                <Button
+                    sx={{
+                        mt: "70px",
+                        backgroundColor: '#000',
+                        color: '#fff',
+                        '&:hover': {
+                            backgroundColor: '#333',
+                        },
+                    }} type="button" variant="contained" fullWidth disableElevation>
+                    Buy
+                </Button>
+            </div>
         </div>
     )
 }

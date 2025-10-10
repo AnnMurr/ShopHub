@@ -1,7 +1,8 @@
 import Button from "@mui/material/Button";
-import "./productCard.css";
 import { ProductType } from "../../../../../../../../../types/products";
 import { Link } from "react-router-dom";
+import Rating from "@mui/material/Rating";
+import "./productCard.css";
 
 interface ProductCardProps {
     data: ProductType
@@ -18,8 +19,11 @@ export const ProductCard = ({ data }: ProductCardProps) => {
                     <div className="card__title">
                         <h5>{data.title}</h5>
                     </div>
-                    <div className="card__price">
-                        <span>{data.price}</span>
+                    <div>
+                        <Rating sx={{ color: "#000" }} size="small" name="read-only" value={data.rating} readOnly />
+                        <div className="card__price">
+                            <span>{data.price}</span>
+                        </div>
                     </div>
                 </div>
             </Link>
