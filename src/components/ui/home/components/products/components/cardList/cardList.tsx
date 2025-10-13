@@ -1,24 +1,39 @@
-import { useEffect } from "react";
-import { useDispatch } from 'react-redux';
+import { useState } from "react";
 import { ProductCard } from "./components/productCard/productCard";
 import { useGetProductsQuery } from "../../../../../../../services/productsApi";
-import { AppDispatch } from "../../../../../../../redux/store";
-import { setProducts } from "../../../../../../../redux/productsSlice";
+import { PaginationBar } from "./components/pagination/pagination";
 import "./cardList.css";
 
 export const CardList = () => {
-    const { data, isLoading } = useGetProductsQuery();
-    const dispatch = useDispatch<AppDispatch>();
+    const { data, isLoading, isError } = useGetProductsQuery();
+    const [currentPage, setCurrentPage] = useState<number>(1);
 
-    useEffect(() => {
-        data?.products && dispatch(setProducts(data.products))
-    }, [data]);
+    if (isLoading) return <p>Loading...</p>;
+    if (isError) return <p>Failed to load products</p>;
+    if (!data?.products?.length) return <p>No products found</p>;
+    
+    const pageSize = 12;
+    const pageCount = Math.ceil(data.products.length / pageSize);
+
+    const lastIndex = currentPage * pageSize;
+    const firstIndex = lastIndex - pageSize;
+    const pageProducts = data.products.slice(firstIndex, lastIndex);
+
+    const handlePageChange = (e: React.ChangeEvent<unknown>, page: number): void => {
+        setCurrentPage(page);
+    }
 
     return (
-        <ul className="card-list">
-            {data?.products.map((item) => (
-                <ProductCard key={item.id} data={item} />
-            ))}
-        </ul>
+        <>
+            <ul className="card-list">
+                {pageProducts?.map((item) => (
+                    <ProductCard key={item.id} data={item} />
+                ))}
+            </ul>
+            <PaginationBar
+                handlePageChange={handlePageChange}
+                count={pageCount}
+                currentPage={currentPage} />
+        </>
     )
 }
