@@ -13,6 +13,7 @@ import { setCredentials } from "../../../../../redux/authSlice";
 import { AppDispatch } from "../../../../../redux/store";
 import { UserType } from "../../../../../types/user";
 import { ButtonComponent } from "../../../../reusable/button/button";
+import { Spinner } from "../../../../reusable/spinner/spinner";
 
 interface ErrorsType {
     email: string,
@@ -27,6 +28,8 @@ export const Form = () => {
     const [login, { isLoading }] = useLoginMutation();
     const dispatch = useDispatch<AppDispatch>();
     const navigate = useNavigate();
+
+    if (isLoading) return <Spinner />;
 
     const handleClickShowPassword = () => setShowPassword((show) => !show);
 
