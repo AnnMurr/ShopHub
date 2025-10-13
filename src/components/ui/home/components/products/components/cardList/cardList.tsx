@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearchParams } from 'react-router-dom';
 import { ProductCard } from "./components/productCard/productCard";
 import { useGetProductsQuery } from "../../../../../../../services/productsApi";
 import { PaginationBar } from "./components/pagination/pagination";
@@ -6,7 +7,10 @@ import { Spinner } from "../../../../../../reusable/spinner/spinner";
 import "./cardList.css";
 
 export const CardList = () => {
-    const { data, isLoading, isError } = useGetProductsQuery();
+    const [searchParams, setSearchParams] = useSearchParams();
+    const sortBy = searchParams.get("sortBy") || undefined;
+    const order = (searchParams.get("order") as 'asc' | 'desc') || undefined;
+    const { data, isLoading, isError } = useGetProductsQuery({sortBy, order});
     const [currentPage, setCurrentPage] = useState<number>(1);
 
     if (isLoading) return <Spinner />;
