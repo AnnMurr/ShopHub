@@ -1,12 +1,10 @@
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { RootState } from "../../../redux/store";
 import { Container } from "../../shared/container/container";
-import { ProductType } from "../../../types/products";
 import { ProductInfo } from "./components/productInfo/productInfo";
 import { ProductImage } from "./components/productImage/productImage";
 import { ProductStats } from "./components/productStats/productStats";
 import { ProductReviews } from "./components/productReviews/productReviews";
+import { useGetSingleProductQuery } from "../../../services/productsApi";
 import "./productDetails.css";
 
 const ProductNotFound = () => {
@@ -18,21 +16,20 @@ export const ProductDetails = () => {
 
     if (!id) return <ProductNotFound />
 
-    const productData: ProductType | undefined = useSelector((state: RootState) =>
-        state.products.products?.filter(item => item.id === +id)[0]);
+    const { data } = useGetSingleProductQuery(Number(id))
 
     return (
         <>
-            {productData &&
+            {data &&
                 <section className="product-details">
                     <Container>
                         <div className="product-details__wrapper">
                             <div className="product-details__top-block">
-                                <ProductInfo data={productData} />
-                                <ProductImage data={productData} />
-                                <ProductStats data={productData} />
+                                <ProductInfo data={data} />
+                                <ProductImage data={data} />
+                                <ProductStats data={data} />
                             </div>
-                            <ProductReviews data={productData} />
+                            <ProductReviews data={data} />
                         </div>
                     </Container>
                 </section>}
