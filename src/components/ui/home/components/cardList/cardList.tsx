@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useSearchParams } from 'react-router-dom';
 import { ProductCard } from "./components/productCard/productCard";
-import { useGetProductsQuery } from "../../../../../../../services/productsApi";
+import { useGetProductsQuery } from "../../../../../services/productsApi";
 import { PaginationBar } from "./components/pagination/pagination";
-import { Spinner } from "../../../../../../reusable/spinner/spinner";
+import { Spinner } from "../../../../reusable/spinner/spinner";
 import "./cardList.css";
 
 export const CardList = () => {
