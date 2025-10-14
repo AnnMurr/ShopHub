@@ -1,9 +1,11 @@
 import { Products } from "./components/products/products";
 
-export const Home = () => {
+const Home = () => {
     return (
         <>
             <Products />
         </>
     )
 }
+
+export default Home;

@@ -6,7 +6,8 @@ import TextField from "@mui/material/TextField";
 import Paper from "@mui/material/Paper";
 import Typography from "@mui/material/Typography";
 import { IconButton, InputAdornment } from "@mui/material";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import { passwordRegex, emailRegex, userData } from "../../../../../consts/consts";
 import { useLoginMutation } from "../../../../../services/authApi";
 import { setCredentials } from "../../../../../redux/authSlice";
@@ -109,7 +110,7 @@ export const Form = () => {
                             endAdornment: (
                                 <InputAdornment position="end">
                                     <IconButton onClick={handleClickShowPassword} edge="end">
-                                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                                        {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
                                     </IconButton>
                                 </InputAdornment>
                             ),
