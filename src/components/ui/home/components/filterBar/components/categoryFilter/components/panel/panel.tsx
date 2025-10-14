@@ -11,6 +11,7 @@ import {
     Toolbar
 } from "@mui/material";
 import { useGetAllCategoriesQuery } from '../../../../../../../../../services/productsApi';
+import { useSearchParams } from 'react-router-dom';
 
 interface PanelProps {
     isOpen: boolean,
@@ -19,10 +20,16 @@ interface PanelProps {
 
 export const Panel = ({ isOpen, setIsOpen }: PanelProps) => {
     const { data } = useGetAllCategoriesQuery();
+    const [searchParams, setSearchParams] = useSearchParams();
 
     const handleClose = () => setIsOpen(false);
 
     const handleSelect = (category: string) => {
+        const sortBy = searchParams.get("sortBy");
+        const order = searchParams.get("order");
+
+        sortBy && order ? setSearchParams({ category: category, sortBy: "price", order: order }) :
+            setSearchParams({ category: category });
 
         handleClose();
     };

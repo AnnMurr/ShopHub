@@ -16,7 +16,11 @@ export const PriceFilter = () => {
     };
 
     const handleSort = (order: "asc" | "desc") => {
-        setSearchParams({ sortBy: "price", order: order })
+        const category = searchParams.get("category");
+
+        category ?
+            setSearchParams({ category: category, sortBy: "price", order: order }) :
+            setSearchParams({ sortBy: "price", order: order });
 
         setAnchorEl(null);
     };
