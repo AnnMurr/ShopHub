@@ -12,7 +12,7 @@ import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import { ButtonComponent } from "../../reusable/button/button";
 
-export const Header = () => {
+const Header = () => {
     const userData = useSelector((state: RootState) => state.auth.user);
     const dispatch = useDispatch<AppDispatch>();
 
@@ -61,3 +61,5 @@ export const Header = () => {
         </AppBar>
     )
 }
+
+export default Header;
