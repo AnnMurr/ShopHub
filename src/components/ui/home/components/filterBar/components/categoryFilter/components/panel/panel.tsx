@@ -1,0 +1,85 @@
+import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
+import CloseIcon from "@mui/icons-material/Close";
+import {
+    Drawer,
+    List,
+    ListItemButton,
+    ListItemText,
+    IconButton,
+    Box,
+    Typography,
+    Toolbar
+} from "@mui/material";
+import { useGetAllCategoriesQuery } from '../../../../../../../../../services/productsApi';
+
+interface PanelProps {
+    isOpen: boolean,
+    setIsOpen: (value: boolean) => void,
+}
+
+export const Panel = ({ isOpen, setIsOpen }: PanelProps) => {
+    const { data } = useGetAllCategoriesQuery();
+
+    const handleClose = () => setIsOpen(false);
+
+    const handleSelect = (category: string) => {
+
+        handleClose();
+    };
+
+    return (
+        <Drawer
+            anchor="left"
+            open={isOpen}
+            onClose={handleClose}
+            sx={{
+                "& .MuiDrawer-paper": {
+                    width: 260,
+                    boxSizing: "border-box",
+                    borderRight: "1px solid #eee",
+                },
+            }}
+        >
+            <Toolbar
+                sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    px: 2,
+                    py: 1,
+                }}
+            >
+                <Box display="flex" alignItems="center" gap={1}>
+                    <CategoryOutlinedIcon color="action" />
+                    <Typography variant="h6" fontWeight={600}>
+                        Categories
+                    </Typography>
+                </Box>
+                <IconButton onClick={handleClose} size="small">
+                    <CloseIcon />
+                </IconButton>
+            </Toolbar>
+
+            <Box sx={{ overflowY: "auto", p: 1 }}>
+                <List>
+                    {data?.map((category: string, i) => {
+                        return (
+                            <ListItemButton
+                                key={i}
+                                onClick={() => handleSelect(category)}
+                                sx={{
+                                    borderRadius: 2,
+                                    mb: 0.5,
+                                    textTransform: "capitalize",
+                                }}
+                            >
+                                <ListItemText primary={category}
+                                />
+                            </ListItemButton>
+                        );
+                    })}
+                </List>
+            </Box>
+        </Drawer>
+    )
+}
