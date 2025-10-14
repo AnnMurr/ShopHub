@@ -7,7 +7,7 @@ import { Spinner } from "../../../../../../reusable/spinner/spinner";
 import "./cardList.css";
 
 export const CardList = () => {
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [searchParams] = useSearchParams();
     const sortBy = searchParams.get("sortBy") || undefined;
     const order = (searchParams.get("order") as 'asc' | 'desc') || undefined;
     const category = searchParams.get("category") || undefined;

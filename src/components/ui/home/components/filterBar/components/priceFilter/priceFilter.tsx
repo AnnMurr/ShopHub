@@ -5,6 +5,7 @@ import Fade from '@mui/material/Fade';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { Box } from '@mui/material';
 
 export const PriceFilter = () => {
     const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -27,16 +28,18 @@ export const PriceFilter = () => {
 
     return (
         <>
-            <IconButton
-                id="fade-button"
-                onClick={handleClick}
-                sx={{
-                    padding: "0",
-                    color: "black"
-                }}
-                aria-label="sort products by price">
-                <ImportExportIcon />
-            </IconButton>
+            <Box sx={{display: "flex", alignItems: "center"}}>
+                <IconButton
+                    id="fade-button"
+                    onClick={handleClick}
+                    sx={{
+                        padding: "0",
+                        color: "black"
+                    }}
+                    aria-label="sort products by price">
+                    <ImportExportIcon />
+                </IconButton>
+            </Box>
             <Menu
                 id="fade-menu"
                 slotProps={{
