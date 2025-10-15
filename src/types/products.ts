@@ -45,3 +45,10 @@ export interface ProductsDataType {
     skip: number,
     total: number,
 }
+
+export interface ProductQueryParams {
+    sortBy?: string,
+    order?: 'asc' | 'desc',
+    category?: string,
+    search?: string
+}

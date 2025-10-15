@@ -1,12 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { ProductType, ProductsDataType } from '../types/products';
+import { ProductQueryParams, ProductType, ProductsDataType } from '../types/products';
 
 export const productsApi = createApi({
     reducerPath: "productsApi",
     baseQuery: fetchBaseQuery({ baseUrl: "https://dummyjson.com" }),
     endpoints: (build) => ({
-        getProducts: build.query<ProductsDataType, { sortBy?: string; order?: 'asc' | 'desc'; category?: string }>({
-            query: ({ sortBy, order, category } = {}) => {
+        getProducts: build.query<ProductsDataType, ProductQueryParams>({
+            query: ({ sortBy, order, category, search } = {}) => {
                 let url = "products?limit=194";
 
                 if (category) {
@@ -15,6 +15,8 @@ export const productsApi = createApi({
 
                 } else if (sortBy && order) {
                     url += `&sortBy=${sortBy}&order=${order}`;
+                } else if (search) {
+                    url = `products/search?q=${search}`
                 }
 
                 return url;

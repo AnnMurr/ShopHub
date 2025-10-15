@@ -11,7 +11,8 @@ export const CardList = () => {
     const sortBy = searchParams.get("sortBy") || undefined;
     const order = (searchParams.get("order") as 'asc' | 'desc') || undefined;
     const category = searchParams.get("category") || undefined;
-    const { data, isLoading, isError } = useGetProductsQuery({sortBy, order, category});
+    const search = searchParams.get("search") || undefined;
+    const { data, isLoading, isError } = useGetProductsQuery({sortBy, order, category, search});
     const [currentPage, setCurrentPage] = useState<number>(1);
 
     if (isLoading) return <Spinner />;
