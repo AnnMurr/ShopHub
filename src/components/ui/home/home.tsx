@@ -1,10 +1,17 @@
-import { Products } from "./components/products/products";
+import { Container } from "../../shared/container/container";
+import { CardList } from "./components/cardList/cardList";
+import { FilterBar } from "./components/filterBar/filterBar";
+import { Search } from "./components/search/search";
 
 const Home = () => {
     return (
-        <>
-            <Products />
-        </>
+        <section>
+            <Container>
+                <Search />
+                <FilterBar />
+                <CardList />
+            </Container>
+        </section>
     )
 }
 

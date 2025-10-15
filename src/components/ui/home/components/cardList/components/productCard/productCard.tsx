@@ -1,8 +1,8 @@
-import { ProductType } from "../../../../../../../../../types/products";
+import { ProductType } from "../../../../../../../types/products";
 import { Link } from "react-router-dom";
 import Rating from "@mui/material/Rating";
-import { ButtonComponent } from "../../../../../../../../reusable/button/button";
-import { formatPrice } from "../../../../../../../../../utils/formatPrice";
+import { ButtonComponent } from "../../../../../../reusable/button/button";
+import { formatPrice } from "../../../../../../../utils/formatPrice";
 import "./productCard.css";
 
 interface ProductCardProps {
