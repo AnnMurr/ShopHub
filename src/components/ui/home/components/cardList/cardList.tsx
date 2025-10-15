@@ -4,6 +4,7 @@ import { ProductCard } from "./components/productCard/productCard";
 import { useGetProductsQuery } from "../../../../../services/productsApi";
 import { PaginationBar } from "./components/pagination/pagination";
 import { Spinner } from "../../../../reusable/spinner/spinner";
+import { EmptyState } from "./components/emptyState/emptyState";
 import "./cardList.css";
 
 export const CardList = () => {
@@ -12,23 +13,20 @@ export const CardList = () => {
     const order = (searchParams.get("order") as 'asc' | 'desc') || undefined;
     const category = searchParams.get("category") || undefined;
     const search = searchParams.get("search") || undefined;
-    const { data, isLoading, isError } = useGetProductsQuery({sortBy, order, category, search});
+
+    const { data, isLoading, isError } = useGetProductsQuery({ sortBy, order, category, search });
     const [currentPage, setCurrentPage] = useState<number>(1);
 
     if (isLoading) return <Spinner />;
     if (isError) return <p>Failed to load products</p>;
-    if (!data?.products?.length) return <p>No products found</p>;
-    
+    if (!data?.products?.length) return <EmptyState />;
+
     const pageSize = 12;
     const pageCount = Math.ceil(data.products.length / pageSize);
 
     const lastIndex = currentPage * pageSize;
     const firstIndex = lastIndex - pageSize;
     const pageProducts = data.products.slice(firstIndex, lastIndex);
-
-    const handlePageChange = (e: React.ChangeEvent<unknown>, page: number): void => {
-        setCurrentPage(page);
-    }
 
     return (
         <>
@@ -38,7 +36,7 @@ export const CardList = () => {
                 ))}
             </ul>
             <PaginationBar
-                handlePageChange={handlePageChange}
+                handlePageChange={(e, page) => setCurrentPage(page)}
                 count={pageCount}
                 currentPage={currentPage} />
         </>
