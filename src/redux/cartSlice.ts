@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { ProductType } from "../types/products";
-import { countQuantity, countTotalPrice, setCartDataToLocalStorage } from "../utils/cartUtils";
+import { updateCartState } from "../utils/cartUtils";
 import { getCartFromLocalStorage } from "../utils/localStorage";
 import { CartItem, CartState } from "../types/cart";
 
@@ -18,23 +18,22 @@ const cartSlice = createSlice({
             const persistedCart = getCartFromLocalStorage();
 
             if (persistedCart.length) {
-                const newItems: Array<CartItem> = action.payload.map((card) => {
-                    const exist = persistedCart.find((item) => item.id === card.id);
+                const newItems = persistedCart.map((data) => {
+                    const product = action.payload.find((card) => data.id === card.id);
 
-                    if (!exist) return null;
-                    
+                    if (!product) return null;
                     return {
-                        id: card.id,
-                        title: card.title,
-                        price: card.price,
-                        image: card.images[0],
-                        quantity: exist.quantity
+                        id: product.id,
+                        title: product.title,
+                        price: product.price,
+                        image: product.images[0],
+                        quantity: data.quantity
                     }
-                }).filter((item): item is CartItem => item !== null)
+
+                }).filter((item): item is CartItem => item !== null);
 
                 state.items = newItems;
-                state.quantity = countQuantity(newItems);
-                state.totalPrice = countTotalPrice(newItems);
+                updateCartState(state);
             }
         },
         addItem: (state, action: PayloadAction<ProductType>) => {
@@ -46,44 +45,32 @@ const cartSlice = createSlice({
                 quantity: 1
             }
 
-            const isItemExist = state.items.find((item) => item.id === action.payload.id);
+            const existingItem = state.items.find((item) => item.id === action.payload.id);
 
-            if (isItemExist) {
-                state.items.map((item) => item.id === action.payload.id && (item.quantity += 1))
-            } else {
-                state.items.push(item)
-            }
+            existingItem ? existingItem.quantity += 1 : state.items.push(item);
 
-            state.quantity = countQuantity(state.items);
-            state.totalPrice = countTotalPrice(state.items);
-            setCartDataToLocalStorage(state.items);
+            updateCartState(state);
         },
         deleteItem: (state, action: PayloadAction<number>) => {
             state.items = state.items.filter((item) => item.id !== action.payload);
-   
-            state.quantity = countQuantity(state.items);
-            state.totalPrice = countTotalPrice(state.items);
-            setCartDataToLocalStorage(state.items);
+
+            updateCartState(state);
         },
         increaseItemQuantity: (state, action: PayloadAction<number>) => {
             state.items.forEach((item) => item.id === action.payload && (item.quantity += 1));
 
-            state.quantity = countQuantity(state.items);
-            state.totalPrice = countTotalPrice(state.items);
-            setCartDataToLocalStorage(state.items);
+            updateCartState(state);
         },
         decreaseItemQuantity: (state, action: PayloadAction<number>) => {
-            state.items.forEach((item) => {
-                if(item.id === action.payload) {
-                    item.quantity === 1 ?
-                    state.items = state.items.filter((item) => item.id !== action.payload) :
-                     item.quantity -= 1
-                } 
-            });
+            const item = state.items.find((item) => item.id === action.payload);
 
-            state.quantity = countQuantity(state.items);
-            state.totalPrice = countTotalPrice(state.items);
-            setCartDataToLocalStorage(state.items);
+            if (!item) return;
+
+            item.quantity === 1 ?
+                state.items = state.items.filter((item) => item.id !== action.payload) :
+                item.quantity -= 1
+
+            updateCartState(state);
         }
     }
 })
