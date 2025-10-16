@@ -21,7 +21,7 @@ export const CartButton = () => {
                     color: "black"
                 }}
                 aria-label="login"
-                component={Link} to="/">
+                component={Link} to="/cart">
                 <ShoppingBagOutlinedIcon />
             </IconButton>
         </Badge>

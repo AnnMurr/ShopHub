@@ -22,7 +22,7 @@ const cartSlice = createSlice({
                     const exist = persistedCart.find((item) => item.id === card.id);
 
                     if (!exist) return null;
-
+                    
                     return {
                         id: card.id,
                         title: card.title,
