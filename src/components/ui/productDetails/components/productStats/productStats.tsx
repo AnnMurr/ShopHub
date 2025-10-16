@@ -2,12 +2,18 @@ import Rating from "@mui/material/Rating";
 import { ProductType } from "../../../../../types/products";
 import { ButtonComponent } from "../../../../reusable/button/button";
 import { formatPrice } from "../../../../../utils/formatPrice";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../../../../redux/cartSlice";
 
 interface ProductStatsProps {
     data: ProductType,
 }
 
 export const ProductStats = ({ data }: ProductStatsProps) => {
+    const dispatch = useDispatch();
+
+    const addProductToCart = () => dispatch(addItem(data));
+    
     return (
         <div className="product-details__stats">
             <div className="product-details__price">
@@ -32,7 +38,7 @@ export const ProductStats = ({ data }: ProductStatsProps) => {
                 <span>{data.reviews.length} reviews</span>
             </div>
             <div className="product-details__button">
-                <ButtonComponent type="button" text="Buy" />
+                <ButtonComponent handleClick={addProductToCart} type="button" text="Buy" />
             </div>
         </div>
     )

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Rating from "@mui/material/Rating";
 import { ButtonComponent } from "../../../../../../reusable/button/button";
 import { formatPrice } from "../../../../../../../utils/formatPrice";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../../../../../../redux/cartSlice";
 import "./productCard.css";
 
 interface ProductCardProps {
@@ -10,6 +12,10 @@ interface ProductCardProps {
 }
 
 export const ProductCard = ({ data }: ProductCardProps) => {
+    const dispatch = useDispatch();
+
+    const addProductToCart = () => dispatch(addItem(data));
+
     return (
         <li className="card">
             <Link className="card__link" to={`/product/${data.id}`}>
@@ -29,7 +35,7 @@ export const ProductCard = ({ data }: ProductCardProps) => {
                 </div>
             </Link>
             <div>
-                <ButtonComponent type="button" text="Buy" />
+                <ButtonComponent handleClick={addProductToCart} type="button" text="Buy" />
             </div>
         </li >
     )
