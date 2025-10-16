@@ -64,10 +64,30 @@ const cartSlice = createSlice({
             state.quantity = countQuantity(state.items);
             state.totalPrice = countTotalPrice(state.items);
             setCartDataToLocalStorage(state.items);
+        },
+        increaseItemQuantity: (state, action: PayloadAction<number>) => {
+            state.items.forEach((item) => item.id === action.payload && (item.quantity += 1));
+
+            state.quantity = countQuantity(state.items);
+            state.totalPrice = countTotalPrice(state.items);
+            setCartDataToLocalStorage(state.items);
+        },
+        decreaseItemQuantity: (state, action: PayloadAction<number>) => {
+            state.items.forEach((item) => {
+                if(item.id === action.payload) {
+                    item.quantity === 1 ?
+                    state.items = state.items.filter((item) => item.id !== action.payload) :
+                     item.quantity -= 1
+                } 
+            });
+
+            state.quantity = countQuantity(state.items);
+            state.totalPrice = countTotalPrice(state.items);
+            setCartDataToLocalStorage(state.items);
         }
     }
 })
 
-export const { addItem, setCartData, deleteItem } = cartSlice.actions;
+export const { addItem, setCartData, deleteItem, increaseItemQuantity, decreaseItemQuantity } = cartSlice.actions;
 export default cartSlice.reducer;
 

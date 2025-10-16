@@ -22,7 +22,7 @@ export const OrderCard = ({ data }: OrderCardProps) => {
         >
             <Image id={data.id} imageLink={data.image} alt={data.title} />
             <Title id={data.id} title={data.title} />
-            <QuantityControls quantity={data.quantity} />
+            <QuantityControls id={data.id} quantity={data.quantity} />
             <Price quantity={data.quantity} price={data.price} />
             <DeleteButton id={data.id} />
         </Box>
