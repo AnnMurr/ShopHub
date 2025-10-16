@@ -29,11 +29,5 @@ export const store = configureStore({
     preloadedState
 })
 
-store.subscribe(() => {
-    const state = store.getState();
-    const newData = state.cart.items.map((item) => ({id: item.id, quantity: item.quantity}));
-    newData.length && localStorage.setItem("cart", JSON.stringify(newData));
-});
-
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

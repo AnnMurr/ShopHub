@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { ProductType } from "../types/products";
-import { countQuantity, countTotalPrice } from "../utils/cartUtils";
+import { countQuantity, countTotalPrice, setCartDataToLocalStorage } from "../utils/cartUtils";
 import { getCartFromLocalStorage } from "../utils/localStorage";
 import { CartItem, CartState } from "../types/cart";
 
@@ -56,12 +56,14 @@ const cartSlice = createSlice({
 
             state.quantity = countQuantity(state.items);
             state.totalPrice = countTotalPrice(state.items);
+            setCartDataToLocalStorage(state.items);
         },
         deleteItem: (state, action: PayloadAction<number>) => {
             state.items = state.items.filter((item) => item.id !== action.payload);
    
             state.quantity = countQuantity(state.items);
             state.totalPrice = countTotalPrice(state.items);
+            setCartDataToLocalStorage(state.items);
         }
     }
 })

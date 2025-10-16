@@ -7,3 +7,8 @@ export const countQuantity = (items: Array<CartItem>): number => {
 export const countTotalPrice = (items: Array<CartItem>): number => {
     return items.reduce((acc, item) => acc += item.price, 0);
 }
+
+export const setCartDataToLocalStorage = (items: Array<CartItem>) => {
+    const newData =  items.map((item) => ({id: item.id, quantity: item.quantity}));
+    localStorage.setItem("cart", JSON.stringify(newData));
+}
