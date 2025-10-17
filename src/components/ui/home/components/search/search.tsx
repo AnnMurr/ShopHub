@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { IconButton, InputBase, Paper } from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
 import { useSearchParams } from "react-router-dom";
+import SearchIcon from '@mui/icons-material/Search';
+import Paper from "@mui/material/Paper";
+import InputBase from "@mui/material/InputBase";
+import IconButton from "@mui/material/IconButton";
 
 export const Search = () => {
     const [searchValue, setSearchValue] = useState<string>("");

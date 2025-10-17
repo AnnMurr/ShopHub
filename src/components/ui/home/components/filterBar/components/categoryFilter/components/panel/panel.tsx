@@ -1,17 +1,15 @@
 import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
 import CloseIcon from "@mui/icons-material/Close";
-import {
-    Drawer,
-    List,
-    ListItemButton,
-    ListItemText,
-    IconButton,
-    Box,
-    Typography,
-    Toolbar
-} from "@mui/material";
 import { useGetAllCategoriesQuery } from '../../../../../../../../../services/productsApi';
 import { useSearchParams } from 'react-router-dom';
+import Drawer from '@mui/material/Drawer';
+import Toolbar from '@mui/material/Toolbar';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import List from '@mui/material/List';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
 
 interface PanelProps {
     isOpen: boolean,

@@ -11,10 +11,11 @@ export const Image = ({ imageLink, alt, id }: ImageProps) => {
     return (
         <Link to={`/product/${id}`}>
             <Box
+                loading="lazy"
                 component="img"
                 src={imageLink}
                 alt={alt}
-                sx={{ width: 80, height: 80, objectFit: "cover",mr: 2 }}
+                sx={{ width: 80, height: 80, objectFit: "cover", mr: 2 }}
             />
         </Link>
     )

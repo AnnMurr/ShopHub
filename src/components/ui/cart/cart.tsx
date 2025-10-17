@@ -4,11 +4,11 @@ import { CardsBox } from "./components/cardsBox/cardsBox"
 import { EmptyState } from "./components/emptyState/emptyState"
 import { CartItem } from "../../../types/cart";
 import { Info } from "./components/info/info";
-import { Box } from "@mui/material";
 import { Container } from "../../shared/container/container";
 import { Title } from "./components/title/title";
+import Box from "@mui/material/Box";
 
-export const Cart = () => {
+const Cart = () => {
     const items: Array<CartItem> = useSelector((state: RootState) => state.cart.items);
 
     return (
@@ -36,3 +36,5 @@ export const Cart = () => {
         </Container>
     )
 }
+
+export default Cart
