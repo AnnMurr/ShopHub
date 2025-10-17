@@ -3,28 +3,30 @@ import { authApi } from "../services/authApi";
 import authReducer from "./authSlice";
 import { getDataFromStorage } from "../utils/localStorage";
 import { productsApi } from "../services/productsApi";
+import cartReducer from "./cartSlice";
 
 const persistedUserData = getDataFromStorage("userData");
 const persistedToken = getDataFromStorage("token");
 
+const preloadedState = {
+    auth: persistedUserData ? {
+        user: JSON.parse(persistedUserData),
+        token: persistedToken,
+    } : { user: null, token: null },
+};
+
 export const store = configureStore({
     reducer: {
         auth: authReducer,
+        cart: cartReducer,
         [authApi.reducerPath]: authApi.reducer,
         [productsApi.reducerPath]: productsApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware()
-        .concat(authApi.middleware)
-        .concat(productsApi.middleware),
-    preloadedState: persistedUserData
-        ? {
-            auth: {
-                user: JSON.parse(persistedUserData),
-                token: persistedToken,
-            },
-        }
-        : undefined,
+            .concat(authApi.middleware)
+            .concat(productsApi.middleware),
+    preloadedState
 })
 
 export type RootState = ReturnType<typeof store.getState>;

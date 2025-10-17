@@ -16,3 +16,8 @@ export const clearUserDataFromStorage = () => {
 export const getDataFromStorage = (key: string) => {
     return localStorage.getItem(key);
 }
+
+export const getCartFromLocalStorage = (): Array<{ id: number; quantity: number }> => {
+    const data = localStorage.getItem("cart");
+    return data ? JSON.parse(data) : [];
+}
