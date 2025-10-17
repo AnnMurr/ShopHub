@@ -9,7 +9,16 @@ export const Info = () => {
     const totalPrice = useSelector((state: RootState) => state.cart.totalPrice);
 
     return (
-        <Box height="fit-content" bgcolor="#fafafa" p="40px" maxWidth="360px" width="100%" >
+        <Box
+            sx={{
+                "@media (max-width: 1024px)": {
+                    bgcolor: "transparent",
+                    maxWidth: "100%",
+                    borderTop: "1px solid #e0e0e0",
+                    marginTop: "40px"
+                }
+            }}
+            height="fit-content" bgcolor="#fafafa" p="40px" maxWidth="360px" width="100%" >
             <Box
                 display="flex"
                 justifyContent="space-between"

@@ -8,7 +8,16 @@ interface CardsBoxProps {
 
 export const CardsBox = ({ items }: CardsBoxProps) => {
     return (
-        <Box width="100%" pr="60px" component="ul">
+        <Box
+            sx={{
+                "@media (max-width: 1024px)": {
+                    pr: "0"
+                }
+            }}
+            width="100%"
+            pr="60px"
+            component="ul"
+        >
             {items.map((item, i) => (
                 <OrderCard key={i} data={item} />
             ))}

@@ -15,13 +15,10 @@ interface QuantityControlsProps {
 export const QuantityControls = ({ quantity, id }: QuantityControlsProps) => {
     const dispath = useDispatch<AppDispatch>();
 
-    const handleIncrease = () => {
-        dispath(increaseItemQuantity(id))
-    }
+    const handleIncrease = () => dispath(increaseItemQuantity(id));
 
-    const handleDecrease= () => {
-        dispath(decreaseItemQuantity(id))
-    }
+    const handleDecrease = () => dispath(decreaseItemQuantity(id));
+
     return (
         <Box display="flex" alignItems="center" gap={1}>
             <IconButton onClick={handleDecrease} size="small" >

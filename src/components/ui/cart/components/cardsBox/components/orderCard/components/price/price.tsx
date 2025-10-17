@@ -9,7 +9,16 @@ interface PriceProps {
 
 export const Price = ({ price, quantity }: PriceProps) => {
     return (
-        <Box minWidth={80} textAlign="right" mx={2}>
+        <Box
+            minWidth={80}
+            textAlign="right"
+            mx={2}
+            sx={{
+                "@media (max-width: 650px)": {
+                    textAlign: "left"
+                },
+            }}
+        >
             <Typography fontWeight={500}>{formatPrice(price * quantity)}</Typography>
         </Box>
     )
