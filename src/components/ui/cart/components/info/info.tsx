@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import { ButtonComponent } from "../../../../reusable/button/button";
 import { useSelector } from "react-redux";
