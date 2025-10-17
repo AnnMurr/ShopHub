@@ -9,15 +9,11 @@ export const productsApi = createApi({
             query: ({ sortBy, order, category, search } = {}) => {
                 let url = "products?limit=194";
 
-                if (category) {
-                    url = `products/category/${category}?limit=194`;
-                    if (sortBy && order) url += `&sortBy=${sortBy}&order=${order}`;
+                if (category) url = `products/category/${category}?limit=194`;
 
-                } else if (sortBy && order) {
-                    url += `&sortBy=${sortBy}&order=${order}`;
-                } else if (search) {
-                    url = `products/search?q=${search}`
-                }
+                if (sortBy && order) url += `&sortBy=${sortBy}&order=${order}`;
+
+                if (search) url = `products/search?q=${search}`;
 
                 return url;
             }
