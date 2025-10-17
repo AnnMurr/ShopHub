@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from 'react-router-dom';
 import { ProductCard } from "./components/productCard/productCard";
 import { useGetProductsQuery } from "../../../../../services/productsApi";
@@ -16,6 +16,10 @@ export const CardList = () => {
 
     const { data, isLoading, isError } = useGetProductsQuery({ sortBy, order, category, search });
     const [currentPage, setCurrentPage] = useState<number>(1);
+
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [data]);
 
     if (isLoading) return <Spinner />;
     if (isError) return <p>Failed to load products</p>;
