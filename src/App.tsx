@@ -8,7 +8,7 @@ import { HomePage } from "./components/ui/home/home.lazy";
 import { useGetProductsQuery } from "./services/productsApi";
 import { useDispatch } from "react-redux";
 import { setCartData } from "./redux/cartSlice";
-import { Cart } from "./components/ui/cart/cart";
+import { Cart } from "./components/ui/cart/cart.lazy";
 import "./assets/styles/reset.css";
 import "./assets/styles/main.css";
 

@@ -20,7 +20,7 @@ export const ProductCard = ({ data }: ProductCardProps) => {
         <li className="card">
             <Link className="card__link" to={`/product/${data.id}`}>
                 <div className="card__image-wrap">
-                    <img className="card__image" src={data.images[0]} alt={data.title} />
+                    <img  className="card__image" src={data.images[0]} alt={data.title} />
                 </div>
                 <div className="card__details">
                     <div className="card__title">
