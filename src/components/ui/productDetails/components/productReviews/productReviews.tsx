@@ -5,10 +5,10 @@ interface ProductReviewsProps {
     data: ProductType,
 }
 
-export const ProductReviews = ({ data }: ProductReviewsProps) => {
+const ProductReviews = ({ data }: ProductReviewsProps) => {
     return (
-        <div className="product-details__commets">
-            <div className="product-details__commets-title">
+        <div className="product-details__comments">
+            <div className="product-details__comments-title">
                 <h2>{data.title} reviews</h2>
             </div>
             {data.reviews.map((info, i) => (
@@ -17,3 +17,5 @@ export const ProductReviews = ({ data }: ProductReviewsProps) => {
         </div>
     )
 }
+
+export default ProductReviews;
