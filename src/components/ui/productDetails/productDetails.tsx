@@ -1,10 +1,12 @@
+import { Suspense } from "react";
 import { useParams } from "react-router-dom";
 import { Container } from "../../shared/container/container";
 import { ProductInfo } from "./components/productInfo/productInfo";
 import { ProductImage } from "./components/productImage/productImage";
 import { ProductStats } from "./components/productStats/productStats";
-import { ProductReviews } from "./components/productReviews/productReviews";
+import { ProductReviews } from "./components/productReviews/productReviews.lazy";
 import { useGetSingleProductQuery } from "../../../services/productsApi";
+import { Spinner } from "../../reusable/spinner/spinner";
 import "./productDetails.css";
 
 const ProductNotFound = () => {
@@ -20,7 +22,7 @@ export const ProductDetails = () => {
 
     return (
         <>
-            {data &&
+            {data ?
                 <section className="product-details">
                     <Container>
                         <div className="product-details__wrapper">
@@ -29,10 +31,13 @@ export const ProductDetails = () => {
                                 <ProductImage data={data} />
                                 <ProductStats data={data} />
                             </div>
-                            <ProductReviews data={data} />
+                            <Suspense fallback={<Spinner />}>
+                                <ProductReviews data={data} />
+                            </Suspense>
                         </div>
                     </Container>
-                </section>}
+                </section> :
+                <Spinner />}
         </>
     )
 }

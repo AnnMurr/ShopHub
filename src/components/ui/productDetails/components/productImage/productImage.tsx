@@ -7,7 +7,7 @@ interface ProductImage {
 export const ProductImage = ({ data }: ProductImage) => {
     return (
         <div className="product-details__image-wrapper">
-            <img loading="lazy" src={data.images[0]} alt={data.title} />
+            <img src={data.images[0]} alt={data.title} />
         </div>
     )
 }
