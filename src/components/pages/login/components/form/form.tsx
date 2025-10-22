@@ -13,13 +13,13 @@ import {
   passwordRegex,
   emailRegex,
   userData,
-} from '../../../../../consts/consts';
+} from '../../../../shared/constants/consts';
 import { useLoginMutation } from '../../../../../services/authApi';
 import { setCredentials } from '../../../../../redux/authSlice';
 import { AppDispatch } from '../../../../../redux/store';
 import { UserType } from '../../../../../types/user';
-import { ButtonComponent } from '../../../../reusable/button/button';
-import { Spinner } from '../../../../reusable/spinner/spinner';
+import { ButtonComponent } from '../../../../shared/button/button';
+import { Spinner } from '../../../../shared/spinner/spinner';
 
 interface ErrorsType {
   email: string;

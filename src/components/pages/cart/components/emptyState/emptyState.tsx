@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { ButtonComponent } from '../../../../reusable/button/button';
+import { ButtonComponent } from '../../../../shared/button/button';
 
 export const EmptyState = () => {
   return (

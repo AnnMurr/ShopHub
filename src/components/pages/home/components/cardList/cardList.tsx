@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { ProductCard } from './components/productCard/productCard';
 import { useGetProductsQuery } from '../../../../../services/productsApi';
 import { PaginationBar } from './components/pagination/pagination';
-import { Spinner } from '../../../../reusable/spinner/spinner';
+import { Spinner } from '../../../../shared/spinner/spinner';
 import { EmptyState } from './components/emptyState/emptyState';
 import './cardList.css';
 

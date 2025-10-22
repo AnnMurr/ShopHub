@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { AppDispatch, RootState } from '../../../../../redux/store';
-import { ButtonComponent } from '../../../../reusable/button/button';
+import { ButtonComponent } from '../../../button/button';
 import IconButton from '@mui/material/IconButton';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import { logout } from '../../../../../redux/authSlice';

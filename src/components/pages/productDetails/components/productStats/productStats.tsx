@@ -1,6 +1,6 @@
 import Rating from '@mui/material/Rating';
 import { ProductType } from '../../../../../types/products';
-import { ButtonComponent } from '../../../../reusable/button/button';
+import { ButtonComponent } from '../../../../shared/button/button';
 import { formatPrice } from '../../../../../utils/formatPrice';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../../../../redux/cartSlice';

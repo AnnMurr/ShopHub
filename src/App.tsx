@@ -1,16 +1,16 @@
 import { Suspense, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Login } from './components/ui/login/login';
-import { ProductDetails } from './components/ui/productDetails/productDetails';
-import { Spinner } from './components/reusable/spinner/spinner';
+import { Login } from './components/pages/login/login';
+import { ProductDetails } from './components/pages/productDetails/productDetails';
+import { Spinner } from './components/shared/spinner/spinner';
 import { Header } from './components/shared/header/header.lazy';
-import { HomePage } from './components/ui/home/home.lazy';
+import { HomePage } from './components/pages/home/home.lazy';
 import { useGetProductsQuery } from './services/productsApi';
 import { useDispatch, useSelector } from 'react-redux';
 import { setCartData } from './redux/cartSlice';
-import { Cart } from './components/ui/cart/cart.lazy';
+import { Cart } from './components/pages/cart/cart.lazy';
 import { RootState } from './redux/store';
-import { ErrorPage } from './components/ui/errorPage/errorPage';
+import { ErrorPage } from './components/pages/errorPage/errorPage';
 import './assets/styles/reset.css';
 import './assets/styles/main.css';
 

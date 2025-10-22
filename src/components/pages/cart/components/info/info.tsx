@@ -1,6 +1,6 @@
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { ButtonComponent } from '../../../../reusable/button/button';
+import { ButtonComponent } from '../../../../shared/button/button';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../../../redux/store';
 import { formatPrice } from '../../../../../utils/formatPrice';

@@ -6,7 +6,7 @@ import { ProductImage } from './components/productImage/productImage';
 import { ProductStats } from './components/productStats/productStats';
 import { ProductReviews } from './components/productReviews/productReviews.lazy';
 import { useGetSingleProductQuery } from '../../../services/productsApi';
-import { Spinner } from '../../reusable/spinner/spinner';
+import { Spinner } from '../../shared/spinner/spinner';
 import './productDetails.css';
 
 const ProductNotFound = () => {
