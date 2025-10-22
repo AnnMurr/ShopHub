@@ -18,8 +18,20 @@ export const ProductStats = ({ data }: ProductStatsProps) => {
   const addProductToCart = () => dispatch(addItem(data));
 
   return (
-    <Box className="product-details__stats">
-      <Typography variant="h5" component="div" sx={{ fontWeight: 600 }}>
+    <Box
+      sx={{
+        maxWidth: '300px',
+        width: '100%',
+        order: '3',
+
+        '@media (max-width: 1024px)': {
+          pt: '30px',
+          maxWidth: '400px',
+          m: '0 auto',
+        },
+      }}
+    >
+      <Typography variant="h5" sx={{ fontWeight: 600 }}>
         {formatPrice(data.price)}
       </Typography>
       <Box
@@ -29,7 +41,7 @@ export const ProductStats = ({ data }: ProductStatsProps) => {
         width="100%"
         p="10px 0"
       >
-        <Typography variant="body2" sx={{ fontWeight: 600 }}>
+        <Typography component="span" sx={{ fontWeight: 600 }}>
           Rating
         </Typography>
         <Rating

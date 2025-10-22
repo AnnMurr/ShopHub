@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box';
 import { Suspense } from 'react';
 import { useParams } from 'react-router-dom';
 
@@ -9,10 +10,9 @@ import { ProductStats } from './components/productStats/productStats';
 import { Container } from '@/components/shared/container/container';
 import { Spinner } from '@/components/shared/spinner/spinner';
 import { useGetSingleProductQuery } from '@/services/productsApi';
-import './productDetails.css';
 
 const ProductNotFound = () => {
-  return <div>Product not found</div>;
+  return <Box>Product not found</Box>;
 };
 
 export const ProductDetails = () => {
@@ -25,20 +25,35 @@ export const ProductDetails = () => {
   return (
     <>
       {data ? (
-        <section className="product-details">
+        <Box component="section">
           <Container>
-            <div className="product-details__wrapper">
-              <div className="product-details__top-block">
+            <Box
+              sx={{
+                pt: '90px',
+
+                '@media (max-width: 670px)': {
+                  pt: '30px',
+                },
+              }}
+            >
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-start',
+                  flexWrap: 'wrap',
+                }}
+              >
                 <ProductInfo data={data} />
                 <ProductImage data={data} />
                 <ProductStats data={data} />
-              </div>
+              </Box>
               <Suspense fallback={<Spinner />}>
                 <ProductReviews data={data} />
               </Suspense>
-            </div>
+            </Box>
           </Container>
-        </section>
+        </Box>
       ) : (
         <Spinner />
       )}

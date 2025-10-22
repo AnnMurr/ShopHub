@@ -1,3 +1,4 @@
+import Box from '@mui/material/Box';
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
@@ -7,7 +8,6 @@ import { ProductCard } from './components/productCard/productCard';
 
 import { Spinner } from '@/components/shared/spinner/spinner';
 import { useGetProductsQuery } from '@/services/productsApi';
-import './cardList.css';
 
 export const CardList = () => {
   const [searchParams] = useSearchParams();
@@ -41,11 +41,23 @@ export const CardList = () => {
 
   return (
     <>
-      <ul className="card-list">
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+          gap: '16px',
+          pt: '90px',
+
+          '@media (max-width: 650px)': {
+            gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
+          },
+        }}
+        component="ul"
+      >
         {pageProducts?.map((item) => (
           <ProductCard key={item.id} data={item} />
         ))}
-      </ul>
+      </Box>
       <PaginationBar
         handlePageChange={(e, page) => setCurrentPage(page)}
         count={pageCount}
