@@ -17,10 +17,11 @@ export const ProductInfo = ({ data }: ProductInfoProps) => {
         maxWidth: 300,
         textAlign: 'left',
 
-        '@media (max-width:1024px)': {
+        '@media (max-width: 1024px)': {
           maxWidth: '100%',
           alignItems: 'center',
           textAlign: 'center',
+          m: '0 auto',
         },
       }}
     >

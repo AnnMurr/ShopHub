@@ -11,10 +11,11 @@ const Header = () => {
   return (
     <AppBar
       sx={{
-        backgroundColor: 'transparent',
+        backgroundColor: '#fff',
         color: 'black',
+        position: 'fixed',
+        zIndex: '9',
       }}
-      position="static"
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
