@@ -1,13 +1,13 @@
 export interface CartItem {
-    id: number,
-    title: string,
-    price: number,
-    image: string,
-    quantity: number
+  id: number;
+  title: string;
+  price: number;
+  image: string;
+  quantity: number;
 }
 
 export interface CartState {
-    items: Array<CartItem>,
-    quantity: number | null,
-    totalPrice: number | null
+  items: Array<CartItem>;
+  quantity: number | null;
+  totalPrice: number | null;
 }

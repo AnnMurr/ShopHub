@@ -1,3 +1,3 @@
-import React from "react";
+import React from 'react';
 
-export const Cart = React.lazy(() => import("./cart"));
+export const Cart = React.lazy(() => import('./cart'));
