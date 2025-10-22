@@ -4,8 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "webpack serve --env mode=development --env port=3000",
-    "build": "webpack --env mode=production",
+    "start": "ts-node -r tsconfig-paths/register --esm node_modules/webpack/bin/webpack.js serve --env mode=development --env port=3000",
+    "build": "ts-node -r tsconfig-paths/register --esm node_modules/webpack/bin/webpack.js --env mode=production",
     "prepare": "husky",
     "lint": "eslint src --ext .ts,.tsx,.js,.jsx"
   },
@@ -60,6 +60,7 @@
     "prettier": "^3.6.2",
     "style-loader": "^4.0.0",
     "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
     "typescript": "^5.9.3",
     "webpack": "^5.102.1",
     "webpack-cli": "^6.0.1",

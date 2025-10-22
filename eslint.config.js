@@ -4,6 +4,7 @@ import tsPlugin from '@typescript-eslint/eslint-plugin';
 import reactPlugin from 'eslint-plugin-react';
 import reactHooksPlugin from 'eslint-plugin-react-hooks';
 import prettierPlugin from 'eslint-plugin-prettier';
+import importPlugin from 'eslint-plugin-import';
 
 export default defineFlatConfig([
   {
@@ -21,6 +22,7 @@ export default defineFlatConfig([
       react: reactPlugin,
       'react-hooks': reactHooksPlugin,
       prettier: prettierPlugin,
+      import: importPlugin, 
     },
     rules: {
       'prettier/prettier': 'error',
@@ -29,6 +31,19 @@ export default defineFlatConfig([
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
       'react/react-in-jsx-scope': 'off',
+      'import/order': [
+        'error',
+        {
+          groups: [
+            'builtin',     
+            'external',    
+            'internal',
+            ['parent', 'sibling', 'index'], 
+          ],
+          'newlines-between': 'always',
+          alphabetize: { order: 'asc', caseInsensitive: true },
+        },
+      ],
     },
     settings: {
       react: { version: 'detect' },
