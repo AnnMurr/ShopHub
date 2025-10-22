@@ -1,8 +1,9 @@
 import Box from '@mui/material/Box';
-import { PriceFilter } from './components/priceFilter/priceFilter';
-import { CategoryFilter } from './components/categoryFilter/categoryFilter';
-import { ResetFilter } from './components/resetFilter/resetFilter';
+
 import { AppliedFiltersBox } from './components/appliedFiltersBox/appliedFiltersBox';
+import { CategoryFilter } from './components/categoryFilter/categoryFilter';
+import { PriceFilter } from './components/priceFilter/priceFilter';
+import { ResetFilter } from './components/resetFilter/resetFilter';
 
 export const FilterBar = () => {
   return (

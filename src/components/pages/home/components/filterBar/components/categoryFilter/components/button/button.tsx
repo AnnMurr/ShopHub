@@ -1,5 +1,5 @@
-import Button from '@mui/material/Button';
 import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined';
+import Button from '@mui/material/Button';
 
 interface CategoryButtonProps {
   handleToggle: () => void;

@@ -1,14 +1,15 @@
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../../../../../../../../redux/store';
+
 import {
   decreaseItemQuantity,
   increaseItemQuantity,
 } from '../../../../../../../../../redux/cartSlice';
+import { AppDispatch } from '../../../../../../../../../redux/store';
 
 interface QuantityControlsProps {
   quantity: number;

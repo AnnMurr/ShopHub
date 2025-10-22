@@ -1,8 +1,9 @@
-import IconButton from '@mui/material/IconButton';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
+import IconButton from '@mui/material/IconButton';
 import { useDispatch } from 'react-redux';
-import { AppDispatch } from '../../../../../../../../../redux/store';
-import { deleteItem } from '../../../../../../../../../redux/cartSlice';
+
+import { deleteItem } from '@/redux/cartSlice';
+import { AppDispatch } from '@/redux/store';
 
 interface DeleteButtonProps {
   id: number;

@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { formatPrice } from '../../../../../../../../../utils/formatPrice';
+
+import { formatPrice } from '@/utils/formatPrice';
 
 interface PriceProps {
   price: number;

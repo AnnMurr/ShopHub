@@ -1,5 +1,5 @@
-import Button from '@mui/material/Button';
 import RestartAltOutlinedIcon from '@mui/icons-material/RestartAltOutlined';
+import Button from '@mui/material/Button';
 import { useSearchParams } from 'react-router-dom';
 
 export const ResetFilter = () => {

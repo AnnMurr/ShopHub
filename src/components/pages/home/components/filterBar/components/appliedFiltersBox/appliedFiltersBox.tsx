@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 export const AppliedFiltersBox = () => {
   const [filters, setFilters] = useState<Array<string>>([]);

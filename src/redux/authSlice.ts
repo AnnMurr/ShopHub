@@ -1,9 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { UserType } from '../types/user';
+
+import { UserType } from '@/types/user';
 import {
   clearUserDataFromStorage,
   saveUserToStorage,
-} from '../utils/localStorage';
+} from '@/utils/localStorage';
 
 interface AuthState {
   user: UserType | null;

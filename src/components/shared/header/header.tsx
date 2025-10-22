@@ -1,10 +1,11 @@
 import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
-import Box from '@mui/material/Box';
-import { Logo } from './components/logo/logo';
+
 import { CartButton } from './components/cartButton/cartButton';
 import { LoginButton } from './components/loginButton/loginButton';
+import { Logo } from './components/logo/logo';
 
 const Header = () => {
   return (

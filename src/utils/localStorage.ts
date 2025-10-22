@@ -1,4 +1,4 @@
-import { UserType } from '../types/user';
+import { UserType } from '@/types/user';
 
 const USER_KEY = 'userData';
 const TOKEN_KEY = 'token';

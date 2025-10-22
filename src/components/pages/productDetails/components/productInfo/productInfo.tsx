@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
-import { ProductType } from '../../../../../types/products';
 import Typography from '@mui/material/Typography';
+
+import { ProductType } from '@/types/products';
 
 interface ProductInfoProps {
   data: ProductType;

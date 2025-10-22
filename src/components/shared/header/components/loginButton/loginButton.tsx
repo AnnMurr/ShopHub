@@ -1,10 +1,11 @@
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import IconButton from '@mui/material/IconButton';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { AppDispatch, RootState } from '../../../../../redux/store';
-import { ButtonComponent } from '../../../button/button';
-import IconButton from '@mui/material/IconButton';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
-import { logout } from '../../../../../redux/authSlice';
+
+import { ButtonComponent } from '@/components/shared/button/button';
+import { logout } from '@/redux/authSlice';
+import { AppDispatch, RootState } from '@/redux/store';
 
 export const LoginButton = () => {
   const userData = useSelector((state: RootState) => state.auth.user);

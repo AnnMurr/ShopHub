@@ -1,10 +1,12 @@
 import Box from '@mui/material/Box';
-import { CartItem } from '../../../../../../../types/cart';
-import { Image } from './components/image/image';
-import { Title } from './components/title/title';
-import { QuantityControls } from './components/quantityControls/quantityControls';
-import { Price } from './components/price/price';
+
 import { DeleteButton } from './components/deleteButton/deleteButton';
+import { Image } from './components/image/image';
+import { Price } from './components/price/price';
+import { QuantityControls } from './components/quantityControls/quantityControls';
+import { Title } from './components/title/title';
+
+import { CartItem } from '@/types/cart';
 
 interface OrderCardProps {
   data: CartItem;

@@ -1,8 +1,9 @@
 import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
-import { ReviewType } from '../../../../../../../types/products';
 import Rating from '@mui/material/Rating';
+
+import { ReviewType } from '@/types/products';
 
 interface CommentBlockProps {
   data: ReviewType;

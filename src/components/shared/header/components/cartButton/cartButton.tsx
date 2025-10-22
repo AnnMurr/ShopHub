@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import Badge from '@mui/material/Badge';
 import IconButton from '@mui/material/IconButton';
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../../../redux/store';
+import { Link } from 'react-router-dom';
+
+import { RootState } from '@/redux/store';
 
 export const CartButton = () => {
   const quantity: number | null = useSelector(

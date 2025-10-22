@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { ProductCard } from './components/productCard/productCard';
-import { useGetProductsQuery } from '../../../../../services/productsApi';
-import { PaginationBar } from './components/pagination/pagination';
-import { Spinner } from '../../../../shared/spinner/spinner';
+
 import { EmptyState } from './components/emptyState/emptyState';
+import { PaginationBar } from './components/pagination/pagination';
+import { ProductCard } from './components/productCard/productCard';
+
+import { Spinner } from '@/components/shared/spinner/spinner';
+import { useGetProductsQuery } from '@/services/productsApi';
 import './cardList.css';
 
 export const CardList = () => {

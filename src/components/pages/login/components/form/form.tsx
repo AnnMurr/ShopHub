@@ -1,25 +1,26 @@
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import InputAdornment from '@mui/material/InputAdornment';
+import Paper from '@mui/material/Paper';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import InputAdornment from '@mui/material/InputAdornment';
-import VisibilityIcon from '@mui/icons-material/Visibility';
-import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+
+import { ButtonComponent } from '@/components/shared/button/button';
 import {
   passwordRegex,
   emailRegex,
   userData,
-} from '../../../../shared/constants/consts';
-import { useLoginMutation } from '../../../../../services/authApi';
-import { setCredentials } from '../../../../../redux/authSlice';
-import { AppDispatch } from '../../../../../redux/store';
-import { UserType } from '../../../../../types/user';
-import { ButtonComponent } from '../../../../shared/button/button';
-import { Spinner } from '../../../../shared/spinner/spinner';
+} from '@/components/shared/constants/consts';
+import { Spinner } from '@/components/shared/spinner/spinner';
+import { setCredentials } from '@/redux/authSlice';
+import { AppDispatch } from '@/redux/store';
+import { useLoginMutation } from '@/services/authApi';
+import { UserType } from '@/types/user';
 
 interface ErrorsType {
   email: string;

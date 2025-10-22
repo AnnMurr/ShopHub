@@ -1,5 +1,6 @@
-import { ProductType } from '../../../../../types/products';
 import { CommentBlock } from './components/commentBlock/commentBlock';
+
+import { ProductType } from '@/types/products';
 
 interface ProductReviewsProps {
   data: ProductType;

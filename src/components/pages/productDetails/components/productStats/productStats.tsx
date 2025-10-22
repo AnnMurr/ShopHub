@@ -1,11 +1,12 @@
-import Rating from '@mui/material/Rating';
-import { ProductType } from '../../../../../types/products';
-import { ButtonComponent } from '../../../../shared/button/button';
-import { formatPrice } from '../../../../../utils/formatPrice';
-import { useDispatch } from 'react-redux';
-import { addItem } from '../../../../../redux/cartSlice';
 import Box from '@mui/material/Box';
+import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
+import { useDispatch } from 'react-redux';
+
+import { ButtonComponent } from '@/components/shared/button/button';
+import { addItem } from '@/redux/cartSlice';
+import { ProductType } from '@/types/products';
+import { formatPrice } from '@/utils/formatPrice';
 
 interface ProductStatsProps {
   data: ProductType;

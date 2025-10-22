@@ -1,10 +1,11 @@
-import { ProductType } from '../../../../../../../types/products';
-import { Link } from 'react-router-dom';
 import Rating from '@mui/material/Rating';
-import { ButtonComponent } from '../../../../../../shared/button/button';
-import { formatPrice } from '../../../../../../../utils/formatPrice';
 import { useDispatch } from 'react-redux';
-import { addItem } from '../../../../../../../redux/cartSlice';
+import { Link } from 'react-router-dom';
+
+import { ButtonComponent } from '@/components/shared/button/button';
+import { addItem } from '@/redux/cartSlice';
+import { ProductType } from '@/types/products';
+import { formatPrice } from '@/utils/formatPrice';
 import './productCard.css';
 
 interface ProductCardProps {

@@ -1,4 +1,4 @@
-import { ProductType } from '../../../../../types/products';
+import { ProductType } from '@/types/products';
 
 interface ProductImage {
   data: ProductType;

@@ -1,6 +1,7 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { Container } from '../../shared/container/container';
+
+import { Container } from '@/components/shared/container/container';
 
 export const ErrorPage = () => {
   return (

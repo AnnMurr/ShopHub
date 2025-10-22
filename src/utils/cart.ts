@@ -1,4 +1,4 @@
-import { CartItem, CartState } from '../types/cart';
+import { CartItem, CartState } from '@/types/cart';
 
 export const countQuantity = (items: Array<CartItem>): number => {
   return items.reduce((acc, item) => (acc += item.quantity), 0);

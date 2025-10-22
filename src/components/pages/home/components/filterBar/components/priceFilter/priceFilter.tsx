@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
 import ImportExportIcon from '@mui/icons-material/ImportExport';
+import Box from '@mui/material/Box';
 import Fade from '@mui/material/Fade';
 import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import Box from '@mui/material/Box';
+import { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 export const PriceFilter = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);

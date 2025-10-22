@@ -1,9 +1,10 @@
-import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import { ButtonComponent } from '../../../../shared/button/button';
+import Typography from '@mui/material/Typography';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../../../redux/store';
-import { formatPrice } from '../../../../../utils/formatPrice';
+
+import { ButtonComponent } from '@/components/shared/button/button';
+import { RootState } from '@/redux/store';
+import { formatPrice } from '@/utils/formatPrice';
 
 export const Info = () => {
   const totalPrice = useSelector((state: RootState) => state.cart.totalPrice);

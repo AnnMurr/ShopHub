@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { authApi } from '../services/authApi';
+
 import authReducer from './authSlice';
-import { getDataFromStorage } from '../utils/localStorage';
-import { productsApi } from '../services/productsApi';
 import cartReducer from './cartSlice';
+import { authApi } from '../services/authApi';
+import { productsApi } from '../services/productsApi';
+import { getDataFromStorage } from '../utils/localStorage';
 
 const persistedUserData = getDataFromStorage('userData');
 const persistedToken = getDataFromStorage('token');

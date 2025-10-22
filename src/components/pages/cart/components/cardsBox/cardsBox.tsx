@@ -1,6 +1,8 @@
-import { OrderCard } from './components/orderCard/orderCard';
-import { CartItem } from '../../../../../types/cart';
 import Box from '@mui/material/Box';
+
+import { OrderCard } from './components/orderCard/orderCard';
+
+import { CartItem } from '@/types/cart';
 
 interface CardsBoxProps {
   items: Array<CartItem>;

@@ -1,12 +1,14 @@
+import Box from '@mui/material/Box';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../../redux/store';
+
 import { CardsBox } from './components/cardsBox/cardsBox';
 import { EmptyState } from './components/emptyState/emptyState';
-import { CartItem } from '../../../types/cart';
 import { Info } from './components/info/info';
-import { Container } from '../../shared/container/container';
 import { Title } from './components/title/title';
-import Box from '@mui/material/Box';
+
+import { Container } from '@/components/shared/container/container';
+import { RootState } from '@/redux/store';
+import { CartItem } from '@/types/cart';
 
 const Cart = () => {
   const items: Array<CartItem> = useSelector(
