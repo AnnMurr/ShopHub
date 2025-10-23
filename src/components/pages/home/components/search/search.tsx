@@ -28,7 +28,7 @@ export const Search = () => {
         display: 'flex',
         alignItems: 'center',
         maxWidth: '80%',
-        m: '90px auto 0 auto',
+        mx: 'auto',
 
         '@media (max-width: 760px)': {
           maxWidth: '100%',

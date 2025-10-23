@@ -79,7 +79,6 @@ export const Form = () => {
       sx={{
         maxWidth: 400,
         mx: 'auto',
-        mt: 20,
         p: 4,
         display: 'flex',
         flexDirection: 'column',

@@ -17,26 +17,28 @@ const Cart = () => {
 
   return (
     <Container>
-      {items.length ? (
-        <>
-          <Title />
-          <Box
-            display="flex"
-            justifyContent="space-between"
-            p="60px 0"
-            sx={{
-              '@media (max-width: 1024px)': {
-                flexDirection: 'column',
-              },
-            }}
-          >
-            <CardsBox items={items} />
-            <Info />
-          </Box>
-        </>
-      ) : (
-        <EmptyState />
-      )}
+      <Box sx={{ pt: '160px' }}>
+        {items.length ? (
+          <>
+            <Title />
+            <Box
+              display="flex"
+              justifyContent="space-between"
+              m="60px 0"
+              sx={{
+                '@media (max-width: 1024px)': {
+                  flexDirection: 'column',
+                },
+              }}
+            >
+              <CardsBox items={items} />
+              <Info />
+            </Box>
+          </>
+        ) : (
+          <EmptyState />
+        )}
+      </Box>
     </Container>
   );
 };

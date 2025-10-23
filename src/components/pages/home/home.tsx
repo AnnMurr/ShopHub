@@ -10,9 +10,11 @@ const Home = () => {
   return (
     <Box component="section">
       <Container>
-        <Search />
-        <FilterBar />
-        <CardList />
+        <Box sx={{ pt: '160px' }}>
+          <Search />
+          <FilterBar />
+          <CardList />
+        </Box>
       </Container>
     </Box>
   );
