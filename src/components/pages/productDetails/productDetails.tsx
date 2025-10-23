@@ -7,6 +7,7 @@ import { ProductInfo } from './components/productInfo/productInfo';
 import { ProductReviews } from './components/productReviews/productReviews.lazy';
 import { ProductStats } from './components/productStats/productStats';
 
+import { BackButton } from '@/components/shared/backButton/backButton';
 import { Container } from '@/components/shared/container/container';
 import { Spinner } from '@/components/shared/spinner/spinner';
 import { useGetSingleProductQuery } from '@/services/productsApi';
@@ -27,15 +28,8 @@ export const ProductDetails = () => {
       {data ? (
         <Box component="section">
           <Container>
-            <Box
-              sx={{
-                pt: '160px',
-
-                '@media (max-width: 600px)': {
-                  pt: '60px',
-                },
-              }}
-            >
+            <Box sx={{ pt: '100px' }}>
+              <BackButton />
               <Box>
                 <Box
                   sx={{
