@@ -1,5 +1,6 @@
 import RestartAltOutlinedIcon from '@mui/icons-material/RestartAltOutlined';
 import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import { useSearchParams } from 'react-router-dom';
 
 export const ResetFilter = () => {
@@ -12,7 +13,7 @@ export const ResetFilter = () => {
       onClick={handleResetFilters}
       sx={{
         color: (theme) => theme.palette.text.primary,
-        borderRadius: '2rem',
+        borderRadius: '50px',
         textTransform: 'none',
         fontWeight: 500,
         display: 'flex',
@@ -21,7 +22,7 @@ export const ResetFilter = () => {
       }}
     >
       <RestartAltOutlinedIcon fontSize="small" />
-      Reset All Filters
+      <Typography sx={{ fontSize: '12px' }}>Reset All Filters</Typography>
     </Button>
   );
 };
