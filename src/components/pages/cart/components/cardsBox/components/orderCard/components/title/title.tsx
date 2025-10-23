@@ -10,14 +10,15 @@ interface TitleProps {
 export const Title = ({ id, title }: TitleProps) => {
   return (
     <Box flex={1}>
-      <Link
+      <Box
+        component={Link}
         to={`/product/${id}`}
-        style={{ textDecoration: 'none', color: 'inherit' }}
+        sx={{ color: (theme) => theme.palette.text.primary }}
       >
         <Typography variant="subtitle1" fontWeight={500}>
           {title}
         </Typography>
-      </Link>
+      </Box>
     </Box>
   );
 };

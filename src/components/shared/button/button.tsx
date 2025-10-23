@@ -16,13 +16,7 @@ export const ButtonComponent = ({
 }: ButtonComponentProps) => {
   return (
     <Button
-      sx={{
-        backgroundColor: '#000',
-        color: '#fff',
-        '&:hover': {
-          backgroundColor: '#333',
-        },
-      }}
+      color="primary"
       {...(link ? { component: Link, to: link } : {})}
       onClick={handleClick}
       type={type}

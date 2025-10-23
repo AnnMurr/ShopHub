@@ -10,11 +10,10 @@ import { Logo } from './components/logo/logo';
 const Header = () => {
   return (
     <AppBar
+      color="default"
       sx={{
-        backgroundColor: '#fff',
-        color: 'black',
         position: 'fixed',
-        zIndex: '9',
+        zIndex: 9,
       }}
     >
       <Container maxWidth="xl">

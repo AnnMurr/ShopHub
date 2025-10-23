@@ -12,19 +12,11 @@ export const CartButton = () => {
   );
 
   return (
-    <Badge
-      badgeContent={quantity ? quantity : 0}
-      sx={{
-        '& .MuiBadge-badge': {
-          color: '#fff',
-          backgroundColor: '#000',
-        },
-      }}
-    >
+    <Badge badgeContent={quantity ? quantity : 0} color="primary">
       <IconButton
         sx={{
           padding: '0',
-          color: 'black',
+          color: (theme) => theme.palette.text.primary,
         }}
         aria-label="login"
         component={Link}

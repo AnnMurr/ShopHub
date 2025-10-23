@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import { Theme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import { useSelector } from 'react-redux';
 
@@ -12,24 +13,27 @@ export const Info = () => {
   return (
     <Box
       sx={{
+        bgcolor: (theme) => theme.palette.background.paper,
+
         '@media (max-width: 1024px)': {
           bgcolor: 'transparent',
           maxWidth: '100%',
-          borderTop: '1px solid #e0e0e0',
+          borderTop: (theme: Theme) => `1px solid ${theme.palette.divider}`,
           marginTop: '40px',
         },
       }}
       height="fit-content"
-      bgcolor="#fafafa"
       p="40px"
       maxWidth="360px"
       width="100%"
     >
       <Box
+        sx={{
+          borderBottom: (theme: Theme) => `1px solid ${theme.palette.divider}`,
+        }}
         display="flex"
         justifyContent="space-between"
         alignItems="center"
-        borderBottom="1px solid #e0e0e0"
         pb="20px"
       >
         <Typography variant="h5">Total price</Typography>

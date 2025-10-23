@@ -43,7 +43,6 @@ export const Panel = ({ isOpen, setIsOpen }: PanelProps) => {
         '& .MuiDrawer-paper': {
           width: 260,
           boxSizing: 'border-box',
-          borderRight: '1px solid #eee',
         },
       }}
     >
@@ -57,7 +56,9 @@ export const Panel = ({ isOpen, setIsOpen }: PanelProps) => {
         }}
       >
         <Box display="flex" alignItems="center" gap={1}>
-          <CategoryOutlinedIcon color="action" />
+          <CategoryOutlinedIcon
+            sx={{ color: (theme) => theme.palette.text.primary }}
+          />
           <Typography variant="h6" fontWeight={600}>
             Categories
           </Typography>

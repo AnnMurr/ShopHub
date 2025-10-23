@@ -10,8 +10,8 @@ export const ResetFilter = () => {
   return (
     <Button
       onClick={handleResetFilters}
-      color="inherit"
       sx={{
+        color: (theme) => theme.palette.text.primary,
         borderRadius: '2rem',
         textTransform: 'none',
         fontWeight: 500,

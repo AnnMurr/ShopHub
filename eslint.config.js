@@ -22,23 +22,29 @@ export default defineFlatConfig([
       react: reactPlugin,
       'react-hooks': reactHooksPlugin,
       prettier: prettierPlugin,
-      import: importPlugin, 
+      import: importPlugin,
     },
     rules: {
       'prettier/prettier': 'error',
       'no-console': 'warn',
       'no-debugger': 'warn',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_' },
+      ],
       'react/react-in-jsx-scope': 'off',
       'import/order': [
         'error',
         {
           groups: [
-            'builtin',     
-            'external',    
-            'internal',
-            ['parent', 'sibling', 'index'], 
+            "builtin",
+            "external",
+            "internal",
+            ["sibling", "parent"],
+            "index",
+            "object",
+            "type"
           ],
           'newlines-between': 'always',
           alphabetize: { order: 'asc', caseInsensitive: true },

@@ -27,7 +27,7 @@ export const CommentBlock = ({ data }: CommentBlockProps) => {
           </Box>
           <Box>
             <Rating
-              sx={{ color: '#000' }}
+              sx={{ color: (theme) => theme.palette.text.primary }}
               size="small"
               name="read-only"
               value={data.rating}
