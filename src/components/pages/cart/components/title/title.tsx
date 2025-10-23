@@ -8,7 +8,7 @@ export const Title = () => {
       sx={{
         borderBottom: (theme: Theme) => `1px solid ${theme.palette.divider}`,
       }}
-      p="40px 0"
+      pb="40px"
     >
       <Typography variant="h4">Cart</Typography>
     </Box>

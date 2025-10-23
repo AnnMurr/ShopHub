@@ -29,28 +29,30 @@ export const ProductDetails = () => {
           <Container>
             <Box
               sx={{
-                pt: '90px',
+                pt: '160px',
 
-                '@media (max-width: 670px)': {
-                  pt: '30px',
+                '@media (max-width: 600px)': {
+                  pt: '60px',
                 },
               }}
             >
-              <Box
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'flex-start',
-                  flexWrap: 'wrap',
-                }}
-              >
-                <ProductInfo data={data} />
-                <ProductImage data={data} />
-                <ProductStats data={data} />
+              <Box>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'flex-start',
+                    flexWrap: 'wrap',
+                  }}
+                >
+                  <ProductInfo data={data} />
+                  <ProductImage data={data} />
+                  <ProductStats data={data} />
+                </Box>
+                <Suspense fallback={<Spinner />}>
+                  <ProductReviews data={data} />
+                </Suspense>
               </Box>
-              <Suspense fallback={<Spinner />}>
-                <ProductReviews data={data} />
-              </Suspense>
             </Box>
           </Container>
         </Box>
