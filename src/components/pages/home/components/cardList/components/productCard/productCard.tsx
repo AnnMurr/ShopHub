@@ -1,24 +1,20 @@
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import { Theme } from '@mui/material/styles';
-import Typography from '@mui/material/Typography';
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { ButtonComponent } from '@/components/shared/button/button';
-import { addItem } from '@/redux/cartSlice';
+import { Button } from './components/button/button';
+import { Image } from './components/image/image';
+import { Price } from './components/price/price';
+import { Title } from './components/title/title';
+
 import { ProductType } from '@/types/products';
-import { formatPrice } from '@/utils/formatPrice';
 
 interface ProductCardProps {
   data: ProductType;
 }
 
 export const ProductCard = ({ data }: ProductCardProps) => {
-  const dispatch = useDispatch();
-
-  const addProductToCart = () => dispatch(addItem(data));
-
   return (
     <Box
       sx={{
@@ -42,14 +38,7 @@ export const ProductCard = ({ data }: ProductCardProps) => {
         component={Link}
         to={`/product/${data.id}`}
       >
-        <Box sx={{ display: 'flex', minHeight: '300px' }}>
-          <Box
-            sx={{ objectFit: 'contain' }}
-            component="img"
-            src={data.images[0]}
-            alt={data.title}
-          />
-        </Box>
+        <Image image={data.images[0]} alt={data.title} />
         <Box
           sx={{
             display: 'flex',
@@ -59,21 +48,7 @@ export const ProductCard = ({ data }: ProductCardProps) => {
             pt: '10px',
           }}
         >
-          <Box>
-            <Typography
-              sx={{
-                fontSize: '20px',
-                color: (theme) => theme.palette.text.primary,
-
-                '@media (max-width: 640px)': {
-                  fontSize: '18px',
-                },
-              }}
-              variant="h5"
-            >
-              {data.title}
-            </Typography>
-          </Box>
+          <Title text={data.title} />
           <Box>
             <Rating
               size="small"
@@ -81,27 +56,11 @@ export const ProductCard = ({ data }: ProductCardProps) => {
               value={data.rating}
               readOnly
             />
-            <Box>
-              <Typography
-                component="span"
-                sx={{
-                  fontSize: '14px',
-                  color: (theme) => theme.palette.text.primary,
-                }}
-              >
-                {formatPrice(data.price)}
-              </Typography>
-            </Box>
+            <Price value={data.price} />
           </Box>
         </Box>
       </Box>
-      <Box>
-        <ButtonComponent
-          handleClick={addProductToCart}
-          type="button"
-          text="Buy"
-        />
-      </Box>
+      <Button data={data} />
     </Box>
   );
 };

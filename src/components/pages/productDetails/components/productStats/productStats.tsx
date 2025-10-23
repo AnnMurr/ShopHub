@@ -1,10 +1,12 @@
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { ButtonComponent } from '@/components/shared/button/button';
+import { QuantityControls } from '@/components/shared/quantityControls/quantityControls';
 import { addItem } from '@/redux/cartSlice';
+import { RootState } from '@/redux/store';
 import { ProductType } from '@/types/products';
 import { formatPrice } from '@/utils/formatPrice';
 
@@ -13,9 +15,12 @@ interface ProductStatsProps {
 }
 
 export const ProductStats = ({ data }: ProductStatsProps) => {
+  const cartData = useSelector((state: RootState) => state.cart.items);
   const dispatch = useDispatch();
 
   const addProductToCart = () => dispatch(addItem(data));
+
+  const selectedItem = cartData.find((item) => item.id === data.id);
 
   return (
     <Box
@@ -61,11 +66,20 @@ export const ProductStats = ({ data }: ProductStatsProps) => {
       >
         {data.reviews.length} reviews
       </Typography>
-      <ButtonComponent
-        handleClick={addProductToCart}
-        type="button"
-        text="Buy"
-      />
+      <Box>
+        {selectedItem ? (
+          <QuantityControls
+            quantity={selectedItem.quantity}
+            id={selectedItem.id}
+          />
+        ) : (
+          <ButtonComponent
+            handleClick={addProductToCart}
+            type="button"
+            text="Add to cart"
+          />
+        )}
+      </Box>
     </Box>
   );
 };
