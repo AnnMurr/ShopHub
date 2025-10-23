@@ -6,6 +6,7 @@ import { EmptyState } from './components/emptyState/emptyState';
 import { Info } from './components/info/info';
 import { Title } from './components/title/title';
 
+import { BackButton } from '@/components/shared/backButton/backButton';
 import { Container } from '@/components/shared/container/container';
 import { RootState } from '@/redux/store';
 import { CartItem } from '@/types/cart';
@@ -17,7 +18,8 @@ const Cart = () => {
 
   return (
     <Container>
-      <Box sx={{ pt: '160px' }}>
+      <Box sx={{ pt: '100px' }}>
+        <BackButton />
         {items.length ? (
           <>
             <Title />
