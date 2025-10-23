@@ -1,3 +1,5 @@
+import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
+import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
 import Paper from '@mui/material/Paper';
 import React, { useEffect, useState } from 'react';
@@ -24,7 +26,7 @@ export const Search = () => {
       component="form"
       onSubmit={(e) => e.preventDefault()}
       sx={{
-        p: '2px 4px',
+        p: '6px 4px',
         display: 'flex',
         alignItems: 'center',
         maxWidth: '80%',
@@ -36,11 +38,15 @@ export const Search = () => {
       }}
     >
       <InputBase
+        value={searchValue}
         onChange={handleOnChange}
         sx={{ ml: 1, flex: 1 }}
         placeholder="Search"
         inputProps={{ 'aria-label': 'search' }}
       />
+      <IconButton onClick={() => setSearchValue('')}>
+        <ClearOutlinedIcon fontSize="small" />
+      </IconButton>
     </Paper>
   );
 };
