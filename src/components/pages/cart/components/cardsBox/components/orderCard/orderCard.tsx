@@ -4,8 +4,8 @@ import { Theme } from '@mui/material/styles';
 import { DeleteButton } from './components/deleteButton/deleteButton';
 import { Image } from './components/image/image';
 import { Price } from './components/price/price';
-import { QuantityControls } from './components/quantityControls/quantityControls';
 import { Title } from './components/title/title';
+import { QuantityControls } from '../../../../../../shared/quantityControls/quantityControls';
 
 import { CartItem } from '@/types/cart';
 
