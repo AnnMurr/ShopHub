@@ -25,7 +25,7 @@ export const LoginButton = () => {
         <IconButton
           sx={{
             padding: '0',
-            color: 'black',
+            color: (theme) => theme.palette.text.primary,
           }}
           aria-label="login"
           component={Link}

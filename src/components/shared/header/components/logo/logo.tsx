@@ -13,7 +13,7 @@ export const Logo = () => {
         fontFamily: 'monospace',
         fontWeight: 700,
         letterSpacing: '.3rem',
-        color: 'inherit',
+        color: (theme) => theme.palette.text.primary,
       }}
     >
       SHOPHUB

@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
+import { Theme } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -23,7 +24,7 @@ export const ProductCard = ({ data }: ProductCardProps) => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        border: '1px solid #e0e0e0',
+        border: (theme: Theme) => `1px solid ${theme.palette.divider}`,
         borderRadius: '7px',
         p: '16px',
         minHeight: '500px',
@@ -62,7 +63,7 @@ export const ProductCard = ({ data }: ProductCardProps) => {
             <Typography
               sx={{
                 fontSize: '20px',
-                color: '#000',
+                color: (theme) => theme.palette.text.primary,
 
                 '@media (max-width: 640px)': {
                   fontSize: '18px',
@@ -75,7 +76,6 @@ export const ProductCard = ({ data }: ProductCardProps) => {
           </Box>
           <Box>
             <Rating
-              sx={{ color: '#000' }}
               size="small"
               name="read-only"
               value={data.rating}
@@ -84,7 +84,10 @@ export const ProductCard = ({ data }: ProductCardProps) => {
             <Box>
               <Typography
                 component="span"
-                sx={{ fontSize: '14px', color: '#000' }}
+                sx={{
+                  fontSize: '14px',
+                  color: (theme) => theme.palette.text.primary,
+                }}
               >
                 {formatPrice(data.price)}
               </Typography>

@@ -45,14 +45,20 @@ export const ProductStats = ({ data }: ProductStatsProps) => {
           Rating
         </Typography>
         <Rating
-          sx={{ color: '#000' }}
+          sx={{ color: (theme) => theme.palette.text.primary }}
           size="small"
           name="half-rating"
           defaultValue={data.rating}
           precision={0.5}
         />
       </Box>
-      <Typography variant="body2" color="text.secondary" pb="15px">
+      <Typography
+        sx={{
+          color: (theme) => theme.palette.text.secondary,
+          pb: '15px',
+        }}
+        variant="body2"
+      >
         {data.reviews.length} reviews
       </Typography>
       <ButtonComponent

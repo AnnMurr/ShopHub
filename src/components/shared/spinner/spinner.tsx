@@ -12,7 +12,7 @@ export const Spinner = () => {
         height: '75vh',
       }}
     >
-      <CircularProgress sx={{ color: '#000' }} />
+      <CircularProgress color="primary" />
     </Box>
   );
 };

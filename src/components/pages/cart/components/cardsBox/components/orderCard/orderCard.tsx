@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import { Theme } from '@mui/material/styles';
 
 import { DeleteButton } from './components/deleteButton/deleteButton';
 import { Image } from './components/image/image';
@@ -20,9 +21,9 @@ export const OrderCard = ({ data }: OrderCardProps) => {
       alignItems="center"
       justifyContent="space-between"
       p={2}
-      borderBottom="1px solid #e0e0e0"
-      bgcolor="#fff"
       sx={{
+        borderBottom: (theme: Theme) => `1px solid ${theme.palette.divider}`,
+
         '@media (max-width: 650px)': {
           flexDirection: 'column',
           alignItems: 'flex-start',

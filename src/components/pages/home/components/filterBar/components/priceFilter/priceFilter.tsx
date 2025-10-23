@@ -34,7 +34,7 @@ export const PriceFilter = () => {
           onClick={handleClick}
           sx={{
             padding: '0',
-            color: 'black',
+            color: (theme) => theme.palette.text.primary,
           }}
           aria-label="sort products by price"
         >

@@ -27,7 +27,12 @@ export const ProductInfo = ({ data }: ProductInfoProps) => {
     >
       <Typography variant="h4">{data.title}</Typography>
       <Box p="20px 0">
-        <Typography sx={{ fontSize: { xs: 16, md: 18 }, color: '#3f3d3a' }}>
+        <Typography
+          sx={{
+            fontSize: { xs: 16, md: 18 },
+            color: (theme) => theme.palette.text.secondary,
+          }}
+        >
           {data.description}
         </Typography>
       </Box>
