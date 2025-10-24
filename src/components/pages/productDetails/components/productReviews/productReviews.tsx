@@ -26,7 +26,7 @@ const ProductReviews = ({ data }: ProductReviewsProps) => {
         </Typography>
       </Box>
       {data.reviews.map((info, i) => (
-        <CommentBlock key={i} data={info} />
+        <CommentBlock key={`${info.reviewerName}-${i}`} data={info} />
       ))}
     </Box>
   );

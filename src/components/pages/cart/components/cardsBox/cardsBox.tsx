@@ -20,8 +20,8 @@ export const CardsBox = ({ items }: CardsBoxProps) => {
       pr="60px"
       component="ul"
     >
-      {items.map((item, i) => (
-        <OrderCard key={i} data={item} />
+      {items.map((item) => (
+        <OrderCard key={item.id} data={item} />
       ))}
     </Box>
   );

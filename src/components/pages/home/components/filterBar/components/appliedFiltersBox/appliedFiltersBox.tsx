@@ -56,9 +56,9 @@ export const AppliedFiltersBox = () => {
       gap={1}
       sx={{ mt: 1 }}
     >
-      {filters.map((filter, i) => (
+      {filters.map((filter) => (
         <Box
-          key={i}
+          key={`${filter.type}-${filter.text}`}
           sx={{
             borderRadius: '50px',
             p: '3px 6px',

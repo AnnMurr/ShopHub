@@ -73,7 +73,7 @@ export const Panel = ({ isOpen, setIsOpen }: PanelProps) => {
           {data?.map((category: string, i) => {
             return (
               <ListItemButton
-                key={i}
+                key={`${category}-${i}`}
                 onClick={() => handleSelect(category)}
                 sx={{
                   borderRadius: 2,
