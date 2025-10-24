@@ -12,12 +12,12 @@ export const CategoryButton = ({ handleToggle }: CategoryButtonProps) => {
       variant="outlined"
       color="inherit"
       sx={{
-        borderRadius: '2rem',
+        borderRadius: '50px',
         textTransform: 'none',
         fontWeight: 500,
         display: 'flex',
         alignItems: 'center',
-        gap: 1,
+        gap: '8px',
       }}
     >
       <CategoryOutlinedIcon fontSize="small" />

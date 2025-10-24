@@ -7,13 +7,11 @@ import { Container } from '@/components/shared/container/container';
 
 export const Login = () => {
   return (
-    <>
-      <Container>
-        <Box sx={{ pt: '100px' }}>
-          <BackButton />
-          <Form />
-        </Box>
-      </Container>
-    </>
+    <Container>
+      <Box sx={{ pt: '100px' }}>
+        <BackButton />
+        <Form />
+      </Box>
+    </Container>
   );
 };

@@ -32,7 +32,7 @@ export const ProductCard = ({ data }: ProductCardProps) => {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          flexGrow: '1',
+          flexGrow: 1,
           pb: '25px',
         }}
         component={Link}
@@ -44,7 +44,7 @@ export const ProductCard = ({ data }: ProductCardProps) => {
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'space-between',
-            flexGrow: '1',
+            flexGrow: 1,
             pt: '10px',
           }}
         >

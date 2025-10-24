@@ -15,7 +15,7 @@ export const Image = ({ imageLink, alt, id }: ImageProps) => {
         component="img"
         src={imageLink}
         alt={alt}
-        sx={{ width: 80, height: 80, objectFit: 'cover', mr: 2 }}
+        sx={{ width: 80, height: 80, objectFit: 'cover', mr: '16px' }}
       />
     </Link>
   );

@@ -14,6 +14,10 @@ export const Info = () => {
     <Box
       sx={{
         bgcolor: (theme) => theme.palette.background.paper,
+        height: 'fit-content',
+        p: '40px',
+        maxWidth: '360px',
+        width: '100%',
 
         '@media (max-width: 1024px)': {
           bgcolor: 'transparent',
@@ -22,19 +26,16 @@ export const Info = () => {
           marginTop: '40px',
         },
       }}
-      height="fit-content"
-      p="40px"
-      maxWidth="360px"
-      width="100%"
     >
       <Box
         sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          pb: '20px',
+
           borderBottom: (theme: Theme) => `1px solid ${theme.palette.divider}`,
         }}
-        display="flex"
-        justifyContent="space-between"
-        alignItems="center"
-        pb="20px"
       >
         <Typography variant="h5">Total price</Typography>
         <Typography fontSize="20px" variant="caption">

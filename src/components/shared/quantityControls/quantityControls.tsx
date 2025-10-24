@@ -24,7 +24,7 @@ export const QuantityControls = ({ quantity, id }: QuantityControlsProps) => {
   const handleDecrease = () => dispath(decreaseItemQuantity(id));
 
   return (
-    <Box display="flex" alignItems="center" gap={1}>
+    <Box display="flex" alignItems="center" gap="8px">
       <Button handleClick={handleDecrease} Icon={RemoveIcon} />
       <Typography>{quantity}</Typography>
       <Button handleClick={handleIncrease} Icon={AddIcon} />

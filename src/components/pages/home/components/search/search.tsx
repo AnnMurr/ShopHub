@@ -40,7 +40,7 @@ export const Search = () => {
       <InputBase
         value={searchValue}
         onChange={handleOnChange}
-        sx={{ ml: 1, flex: 1 }}
+        sx={{ ml: '8px', flex: 1 }}
         placeholder="Search"
         inputProps={{ 'aria-label': 'search' }}
       />

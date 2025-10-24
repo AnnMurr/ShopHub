@@ -79,11 +79,11 @@ export const Form = () => {
       sx={{
         maxWidth: 400,
         mx: 'auto',
-        p: 4,
+        p: '32px',
         display: 'flex',
         flexDirection: 'column',
-        gap: 2,
-        borderRadius: 2,
+        gap: '16px',
+        borderRadius: '16px',
       }}
     >
       <Typography variant="h5" align="center" gutterBottom>
@@ -97,7 +97,7 @@ export const Form = () => {
           label="Email"
           type="text"
           fullWidth
-          sx={{ mb: 2 }}
+          sx={{ mb: '16px' }}
           error={!!errors.email}
           helperText={errors.email}
         />
@@ -108,7 +108,7 @@ export const Form = () => {
           label="Password"
           type={showPassword ? 'text' : 'password'}
           fullWidth
-          sx={{ mb: 2 }}
+          sx={{ mb: '16px' }}
           error={!!errors.password}
           helperText={errors.password}
           slotProps={{

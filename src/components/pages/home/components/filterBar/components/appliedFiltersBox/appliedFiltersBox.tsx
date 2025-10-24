@@ -54,7 +54,7 @@ export const AppliedFiltersBox = () => {
       flexWrap="wrap"
       alignItems="center"
       gap={1}
-      sx={{ mt: 1 }}
+      sx={{ mt: '8px' }}
     >
       {filters.map((filter) => (
         <Box

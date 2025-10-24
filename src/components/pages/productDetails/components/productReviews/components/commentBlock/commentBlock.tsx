@@ -13,7 +13,7 @@ interface CommentBlockProps {
 
 export const CommentBlock = ({ data }: CommentBlockProps) => {
   return (
-    <Paper style={{ padding: '40px 20px', borderRadius: '0' }}>
+    <Paper style={{ padding: '40px 20px', borderRadius: 0 }}>
       <Grid container wrap="nowrap">
         <Grid width="100%" justifyContent="space-between" display="flex">
           <Box>

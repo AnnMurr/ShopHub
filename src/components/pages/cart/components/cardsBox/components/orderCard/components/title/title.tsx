@@ -9,7 +9,7 @@ interface TitleProps {
 
 export const Title = ({ id, title }: TitleProps) => {
   return (
-    <Box flex={1}>
+    <Box>
       <Box
         component={Link}
         to={`/product/${id}`}

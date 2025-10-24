@@ -24,7 +24,7 @@ export const LoginButton = () => {
       ) : (
         <IconButton
           sx={{
-            padding: '0',
+            padding: 0,
             color: (theme) => theme.palette.text.primary,
           }}
           aria-label="login"

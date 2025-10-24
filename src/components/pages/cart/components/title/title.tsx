@@ -6,9 +6,9 @@ export const Title = () => {
   return (
     <Box
       sx={{
+        pb: '40px',
         borderBottom: (theme: Theme) => `1px solid ${theme.palette.divider}`,
       }}
-      pb="40px"
     >
       <Typography variant="h4">Cart</Typography>
     </Box>
