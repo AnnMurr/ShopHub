@@ -1,3 +1,3 @@
-import React from "react";
+import React from 'react';
 
-export const Header = React.lazy(() => import("./header"));
+export const Header = React.lazy(() => import('./header'));

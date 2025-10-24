@@ -1,0 +1,49 @@
+import Box from '@mui/material/Box';
+import { useSelector } from 'react-redux';
+
+import { CardsBox } from './components/cardsBox/cardsBox';
+import { EmptyState } from './components/emptyState/emptyState';
+import { Info } from './components/info/info';
+import { Title } from './components/title/title';
+
+import { BackButton } from '@/components/shared/backButton/backButton';
+import { Container } from '@/components/shared/container/container';
+import { RootState } from '@/redux/store';
+import { CartItem } from '@/types/cart';
+
+const Cart = () => {
+  const items: Array<CartItem> = useSelector(
+    (state: RootState) => state.cart.items,
+  );
+
+  return (
+    <Container>
+      <Box sx={{ pt: '100px' }}>
+        <BackButton />
+        {items.length ? (
+          <>
+            <Title />
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                m: '60px 0',
+
+                '@media (max-width: 1024px)': {
+                  flexDirection: 'column',
+                },
+              }}
+            >
+              <CardsBox items={items} />
+              <Info />
+            </Box>
+          </>
+        ) : (
+          <EmptyState />
+        )}
+      </Box>
+    </Container>
+  );
+};
+
+export default Cart;
