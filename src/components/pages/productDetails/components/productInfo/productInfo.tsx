@@ -10,12 +10,12 @@ interface ProductInfoProps {
 export const ProductInfo = ({ data }: ProductInfoProps) => {
   return (
     <Box
-      display="flex"
-      flexDirection="column"
-      order="2"
       sx={{
         maxWidth: 300,
         textAlign: 'left',
+        order: 2,
+        display: 'flex',
+        flexDirection: 'column',
 
         '@media (max-width: 1024px)': {
           maxWidth: '100%',
@@ -25,12 +25,27 @@ export const ProductInfo = ({ data }: ProductInfoProps) => {
         },
       }}
     >
-      <Typography variant="h4">{data.title}</Typography>
+      <Typography
+        sx={{
+          fontSize: '34px',
+
+          '@media (max-width: 600px)': {
+            fontSize: '25px',
+          },
+        }}
+        variant="h4"
+      >
+        {data.title}
+      </Typography>
       <Box p="20px 0">
         <Typography
           sx={{
-            fontSize: { xs: 16, md: 18 },
+            fontSize: '18px',
             color: (theme) => theme.palette.text.secondary,
+
+            '@media (max-width: 600px)': {
+              fontSize: '16px',
+            },
           }}
         >
           {data.description}

@@ -21,12 +21,21 @@ const ProductReviews = ({ data }: ProductReviewsProps) => {
       }}
     >
       <Box sx={{ textAlign: 'center', pb: '60px' }}>
-        <Typography sx={{ fontSize: '30px' }} variant="h2">
+        <Typography
+          sx={{
+            fontSize: '30px',
+
+            '@media (max-width: 600px)': {
+              fontSize: '24px',
+            },
+          }}
+          variant="h2"
+        >
           {data.title} reviews
         </Typography>
       </Box>
       {data.reviews.map((info, i) => (
-        <CommentBlock key={i} data={info} />
+        <CommentBlock key={`${info.reviewerName}-${i}`} data={info} />
       ))}
     </Box>
   );

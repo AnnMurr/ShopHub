@@ -15,7 +15,7 @@ export const PaginationBar = ({
 }: PaginationBarProps) => {
   return (
     <Box display={'flex'} justifyContent={'center'} padding={'60px 0'}>
-      <Stack spacing={2}>
+      <Stack>
         <Pagination
           onChange={handlePageChange}
           count={count}

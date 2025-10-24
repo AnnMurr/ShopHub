@@ -23,7 +23,7 @@ const Header = () => {
             sx={{
               marginLeft: 'auto',
               display: 'flex',
-              gap: 2,
+              gap: '16px',
               alignItems: 'center',
             }}
           >

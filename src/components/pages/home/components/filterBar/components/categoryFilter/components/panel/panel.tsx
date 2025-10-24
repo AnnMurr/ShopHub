@@ -51,11 +51,11 @@ export const Panel = ({ isOpen, setIsOpen }: PanelProps) => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          px: 2,
-          py: 1,
+          px: '16px',
+          py: '8px',
         }}
       >
-        <Box display="flex" alignItems="center" gap={1}>
+        <Box display="flex" alignItems="center" gap={'5px'}>
           <CategoryOutlinedIcon
             sx={{ color: (theme) => theme.palette.text.primary }}
           />
@@ -68,12 +68,12 @@ export const Panel = ({ isOpen, setIsOpen }: PanelProps) => {
         </IconButton>
       </Toolbar>
 
-      <Box sx={{ overflowY: 'auto', p: 1 }}>
+      <Box sx={{ overflowY: 'auto', p: '8px' }}>
         <List>
           {data?.map((category: string, i) => {
             return (
               <ListItemButton
-                key={i}
+                key={`${category}-${i}`}
                 onClick={() => handleSelect(category)}
                 sx={{
                   borderRadius: 2,

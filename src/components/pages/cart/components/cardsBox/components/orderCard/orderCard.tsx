@@ -17,29 +17,31 @@ export const OrderCard = ({ data }: OrderCardProps) => {
   return (
     <Box
       component="li"
-      display="flex"
-      alignItems="center"
-      justifyContent="space-between"
-      p={2}
       sx={{
+        p: '16px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+
         borderBottom: (theme: Theme) => `1px solid ${theme.palette.divider}`,
 
         '@media (max-width: 650px)': {
           flexDirection: 'column',
           alignItems: 'flex-start',
-          gap: 1.5,
+          gap: '12px',
         },
       }}
     >
-      <Box display="flex" alignItems="center" gap={2}>
+      <Box display="flex" alignItems="center" gap="16px">
         <Image id={data.id} imageLink={data.image} alt={data.title} />
         <Title id={data.id} title={data.title} />
       </Box>
       <Box
-        display="flex"
-        alignItems="center"
-        gap={2}
         sx={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '16px',
+
           '@media (min-width: 651px)': {
             marginLeft: 'auto',
           },

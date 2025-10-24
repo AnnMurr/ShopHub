@@ -11,10 +11,10 @@ export const EmptyState = () => {
         textAlign: 'center',
         p: '60px 0',
         flexDirection: 'column',
-        gap: 4,
+        gap: '32px',
       }}
     >
-      <Typography fontSize={25} variant="h2">
+      <Typography sx={{ fontSize: '25px' }} variant="h2">
         Your cart is empty
       </Typography>
       <Box sx={{ maxWidth: '200px', margin: '0 auto' }}>

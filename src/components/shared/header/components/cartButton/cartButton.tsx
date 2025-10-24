@@ -15,7 +15,7 @@ export const CartButton = () => {
     <Badge badgeContent={quantity ? quantity : 0} color="primary">
       <IconButton
         sx={{
-          padding: '0',
+          padding: 0,
           color: (theme) => theme.palette.text.primary,
         }}
         aria-label="login"

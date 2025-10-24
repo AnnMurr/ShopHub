@@ -24,10 +24,11 @@ const Cart = () => {
           <>
             <Title />
             <Box
-              display="flex"
-              justifyContent="space-between"
-              m="60px 0"
               sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                m: '60px 0',
+
                 '@media (max-width: 1024px)': {
                   flexDirection: 'column',
                 },

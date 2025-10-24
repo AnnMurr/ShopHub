@@ -8,7 +8,7 @@ export const ErrorPage = () => {
     <Container>
       <Box
         textAlign="center"
-        pt="90px"
+        pt="160px"
         display="flex"
         flexDirection="column"
         gap="15px"

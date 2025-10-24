@@ -18,7 +18,7 @@ export const ResetFilter = () => {
         fontWeight: 500,
         display: 'flex',
         alignItems: 'center',
-        gap: 1,
+        gap: '5px',
       }}
     >
       <RestartAltOutlinedIcon fontSize="small" />

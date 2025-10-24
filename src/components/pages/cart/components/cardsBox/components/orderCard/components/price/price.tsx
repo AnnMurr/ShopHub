@@ -11,10 +11,11 @@ interface PriceProps {
 export const Price = ({ price, quantity }: PriceProps) => {
   return (
     <Box
-      minWidth={80}
-      textAlign="right"
-      mx={2}
       sx={{
+        minWidth: '80px',
+        textAlign: 'right',
+        mx: '16px',
+
         '@media (max-width: 650px)': {
           textAlign: 'left',
         },

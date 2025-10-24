@@ -27,7 +27,7 @@ export const ProductStats = ({ data }: ProductStatsProps) => {
       sx={{
         maxWidth: '300px',
         width: '100%',
-        order: '3',
+        order: 3,
 
         '@media (max-width: 1024px)': {
           pt: '30px',
